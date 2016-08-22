@@ -15,7 +15,8 @@
     "gulp-concat-css": "^2.3.0"
   },
   "scripts": {
-    "postinstall": "bower install",
+    "install": "bower install",
+    "postinstall": "gulp build",
     "prestart": "npm install",
 
     "start": "http-server -a localhost -p 8000 -c-1 ./app"
