@@ -1,0 +1,88 @@
+.default {
+  margin: 0;
+}
+.navbar {
+  margin: 0;
+}
+
+.panel {
+  margin: 0;
+}
+
+.body_sp {
+  background-color: #0f0f0f;
+  color: white;
+}
+
+.headerTitle {
+  font-size: 55pt;
+  float: left;
+  color: white;
+}
+
+.roboCat {
+  height: 123px;
+  float: left;
+}
+
+.main {
+  opacity: 0;
+}
+
+.panel {
+  background-color: #0f0f0f;
+}
+
+.itemImg {
+  display: block;
+  height: 200px;
+  margin: 0 auto;
+}
+
+.itemBlock {
+  position: relative;
+  border-bottom: solid whitesmoke;
+}
+
+.itemInfo {
+  float: left;
+}
+
+.itemPrice {
+  font-size: 30pt;
+}
+
+.moreInfo {
+  position: absolute;
+  right: 0;
+  bottom: 5px;
+}
+
+.additionalTab {
+  display: none;
+  opacity: 0;
+  margin: 10px 0 0 0;
+}
+
+.closeButton {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  display: none;
+}
+
+.reviewForm {
+  float: left;
+  display: none;
+  opacity: 0;
+}
+
+.ng-invalid.ng-dirty {
+  border-color: crimson;
+}
+
+.ng-valid.ng-dirty {
+  border-color: #5cb85c;
+}
