@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en" ng-app="guitarStore">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Best store</title>
+
+    <link rel="stylesheet" href="/bower_components/normalize-css/normalize.css">
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/main.css">
+
+</head>
+<body ng-controller="GuitarStore as store">
+<h1 class="text-center">Гитарный магазин</h1>
+<header class="container">
+    <div class="row">
+        <nav class="navbar navbar-inverse">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">Angular store</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                           aria-expanded="false">ТОВАРЫ <span class="caret"></span></a>
+
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Машины</a></li>
+                            <li><a href="#">Оружие</a></li>
+                            <li><a href="/pages/kolisnyk-maksym/">Котики</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+            </div>
+        </nav>
+    </div>
+</header>
+
+
+<main role="main" class="container">
+    <div class="row">
+        <div class="col-sm-6 col-md-6" ng-repeat="product in store.products" ng-hide="product.soldOut">
+            <div class="row" ng-hide="product.soldOut">
+                <h4 class="col-sm-10 col-md-10">{{product.name}}</h4>
+
+                <div class="col-sm-2 col-md-2">
+                    <h5 class="text-center warning" ng-show="product.price2"><s>{{product.price}}</s></h5>
+                    <h4 ng-hide="product.price2">{{product.price}}</h4>
+                    <h4 class="text-center">{{product.price2}}</h4>
+                    <button type="button" class="btn btn-success">{{"купить" | uppercase}}</button>
+                </div>
+            </div>
+            <br/>
+            <div class="row" ng-controller="GalleryController as gallery" ng-show="product.images.length">
+                <ul class="col-sm-2 col-md-2">
+                    <li class="thumbnail" ng-repeat="image in product.images">
+                        <img ng-src="{{image}}"/>
+                    </li>
+                </ul>
+
+                <div class="col-sm-10 col-md-10">
+                    <img class="img-responsive" ng-src="{{product.images[gallery.current]}}"/>
+                </div>
+            </div>
+
+            <section ng-controller="TabController as tab">
+                <ul class="nav nav-tabs">
+                    <li ng-class="{ active:tab.isSet(1) }">
+                        <a href="" ng-click="tab.setTab(1)">Описание</a>
+                    </li>
+                    <li ng-class="{ active:tab.isSet(2) }">
+                        <a href="" ng-click="tab.setTab(2)">Отзывы</a>
+                    </li>
+                </ul>
+
+                <div ng-show="tab.isSet(1)">
+                    <h4>Описание</h4>
+                    <blockquote>{{product.description}}</blockquote>
+                </div>
+
+                <div ng-show="tab.isSet(2)">
+                    <ul>
+                        <h4>Отзывы</h4>
+                        <li ng-repeat="message in product.messages">
+                            <blockquote>
+                                <strong>Сообщение</strong>
+                                {{message.message}}
+                                <cite class="clearfix">Автор: {{message.author}}</cite>
+                            </blockquote>
+                        </li>
+                    </ul>
+
+
+                    <form name="reviewForm" ng-controller="ReviewController as reviewCtrl"
+                          ng-submit="reviewForm.$valid && reviewCtrl.addReview(product)" novalidate>
+
+                        <blockquote>
+                            {{reviewCtrl.message.message}}
+                            <cite class="clearfix">Автор: {{reviewCtrl.message.author}}</cite>
+                        </blockquote>
+
+                        <h4>Отправить отзыв</h4>
+                        <fieldset class="form-group">
+                            <textarea ng-model="reviewCtrl.message.message" class="form-control"
+                                      placeholder="Напишите короткий отзыв..." title="Review"></textarea>
+                        </fieldset>
+                        <fieldset class="form-group">
+                            <input ng-model="reviewCtrl.message.author" type="email" class="form-control"
+                                   placeholder="jimmyDean@example.org" title="Email" required/>
+                        </fieldset>
+                        <fieldset class="form-group">
+                            <input type="submit" class="btn btn-primary pull-right" value="Отправить отзыв" required/>
+                        </fieldset>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </div>
+
+</main>
+
+
+<script src="/bower_components/jquery/dist/jquery.js"></script>
+<script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="/bower_components/angular/angular.min.js"></script>
+
+
+<script src="/js/app.js"></script>
+<script src="/js/all.js"></script>
+</body>
+</html>
