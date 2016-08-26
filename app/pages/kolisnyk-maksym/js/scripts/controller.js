@@ -1,4 +1,5 @@
 (function () {
+    var app = angular.module('store', []);
 
     app.controller("DefaultController", function () {
         this.message = {
