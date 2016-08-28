@@ -18,13 +18,13 @@
     <div class="row">
         <nav class="navbar navbar-inverse">
             <div class="navbar-header">
-                <a class="navbar-brand" href="/">Angular store</a>
+                <a class="navbar-brand" href="#/">Angular store</a>
             </div>
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                            aria-expanded="false">ТОВАРЫ <span class="caret"></span></a>
 
                         <ul class="dropdown-menu">
@@ -44,12 +44,7 @@
 
 <main role="main" class="container">
     <div class="row">
-
-        <div ng-controller="DefaultController as DefaultCtrl">
-            <h3>{{DefaultCtrl.message.first}}</h3>
-            <p>{{DefaultCtrl.message.second}}</p>
-        </div>
-
+        <div ng-view></div>
     </div>
 </main>
 
@@ -57,8 +52,8 @@
 <script src="bower_components/jquery/dist/jquery.js"></script>
 <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
 
-
-<script src="/js/all.js"></script>
+<script src="js/all.js"></script>
 </body>
 </html>

@@ -1,6 +1,6 @@
 (function () {
 
-    var app_sp = angular.module('store', []);
+    var app_sp = angular.module('storeOne', []);
 
     app_sp.controller("StoreController", function () {
         this.products = gamingPlatforms;
