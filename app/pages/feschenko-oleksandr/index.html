@@ -54,7 +54,7 @@
                     <img class="product_gallery-main_af" ng-src="{{product.images[galleryCtrl.current]}}">
                     <ul class="product_gallery-preview_af">
                         <li ng-repeat="preview in product.images">
-                           <img ng-src="{{preview}}" class="product_gallery-preview-image_af" ng-click="galleryCtrl.setCurrent(1)">
+                           <img ng-src="{{preview}}" class="product_gallery-preview-image_af" ng-click="galleryCtrl.setCurrent($index)" ng-class="{ active_image_af:galleryCtrl.isCurrent($index) }">
                         </li>
                     </ul>
                 </div>

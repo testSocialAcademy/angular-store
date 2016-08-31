@@ -38,9 +38,13 @@
 
 .product_gallery-preview-image_af {
     width: 45px;
-    border: 1px solid black;
     margin: 5px;
     padding: 5px;
+    cursor: pointer;
+}
+
+.active_image_af {
+    border: 1px solid green;
 }
 
 .product_main_info_af {
