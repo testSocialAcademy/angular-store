@@ -50,11 +50,11 @@
         <div ng-repeat="product in storeCtrl.products" ng-controller="DisplayController as displayCtrl" ng-hide="product.soldOut" class="clearfix_af product_af">
 
             <section class="clearfix_af">
-                <div class="product_gallery_af">
-                    <img class="product_gallery-main_af" ng-src="{{product.images[0]}}">
+                <div class="product_gallery_af" ng-show="product.images.length" ng-controller="GalleryController as galleryCtrl">
+                    <img class="product_gallery-main_af" ng-src="{{product.images[galleryCtrl.current]}}">
                     <ul class="product_gallery-preview_af">
                         <li ng-repeat="preview in product.images">
-                           <img ng-src="{{preview}}" class="product_gallery-preview-image_af">
+                           <img ng-src="{{preview}}" class="product_gallery-preview-image_af" ng-click="galleryCtrl.setCurrent(1)">
                         </li>
                     </ul>
                 </div>

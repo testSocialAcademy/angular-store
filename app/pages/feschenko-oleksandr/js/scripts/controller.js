@@ -5,6 +5,14 @@
         this.products = whiskeys;
     });
 
+    app_af.controller('GalleryController', function(){
+        this.current = 0;
+        
+        this.setCurrent = function(newGallery){
+            this.current = newGallery || 0;
+        };
+    });
+
     app_af.controller('TabController', function(){
         this.tab = 1;
 
