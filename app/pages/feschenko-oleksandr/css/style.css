@@ -1,0 +1,64 @@
+.clearfix_af:after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.old_prise_af {
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+.ng-invalid.ng-dirty {
+    border-color: #FA787E;
+}
+.ng-valid.ng-dirty {
+    border-color: #78FA89;
+}
+
+.product_af {
+    border-bottom: 1px solid black;
+}
+
+.product_gallery_af {
+    float: left;
+    padding: 5px;
+}
+
+.product_gallery-main_af {
+    width: 250px;
+    float: left;
+}
+
+.product_gallery-preview_af {
+    float: left;
+    list-style-type: none;
+    padding: 3px;
+}
+
+.product_gallery-preview-image_af {
+    width: 45px;
+    border: 1px solid black;
+    margin: 5px;
+    padding: 5px;
+}
+
+.product_main_info_af {
+    float: left;
+    margin-left: 30px;
+}
+
+.product_additional-all_feedback_af {
+    list-style-type: none;
+    padding: 0;
+}
+
+.feedback_form_af {
+    float: left;
+}
+
+.feedback_form-author_af,
+.feedback_form-message_af,
+.feedback_form-submit_af {
+    margin-bottom: 5px;
+}
