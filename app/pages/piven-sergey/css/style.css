@@ -2,10 +2,6 @@
     margin: 0;
 }
 
-.panel {
-    margin: 0;
-}
-
 .body_sp {
     background-color: #0f0f0f;
     color: white;
@@ -26,10 +22,6 @@
     opacity: 0;
 }
 
-.panel {
-    background-color: #0f0f0f;
-}
-
 .itemImg {
     display: block;
     height: 200px;
@@ -38,7 +30,7 @@
 
 .itemBlock {
     position: relative;
-    border-bottom: solid whitesmoke;
+    border-bottom: solid lightgray;
 }
 
 .itemInfo {
@@ -56,8 +48,6 @@
 }
 
 .additionalTab {
-    display: none;
-    opacity: 0;
     margin: 10px 0 0 0;
 }
 
@@ -72,8 +62,6 @@
 
 .reviewForm {
     float: left;
-    display: none;
-    opacity: 0;
 }
 
 .ng-invalid.ng-dirty {

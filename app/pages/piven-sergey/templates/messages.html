@@ -1,0 +1,24 @@
+<div class="panel" ng-show="additionalPanenCTRL.isSelected(2)"
+     ng-controller="ReviewController as reviewCTRL">
+    <div ng-repeat="review in item.messages">
+        <h3>{{review.author}}</h3>
+        <p>{{review.message}}</p>
+    </div>
+
+    <div>
+        <h3>{{reviewCTRL.review.author}}</h3>
+        <p>{{reviewCTRL.review.message}}</p>
+    </div>
+
+    <form name="reviewForm" class="reviewForm"
+          ng-submit="reviewForm.$valid && reviewCTRL.addReview(item)" novalidate>
+        <input type="text" placeholder="Type your name here." ng-model="reviewCTRL.review.author"
+               class="form-control" required>
+
+        <textarea cols="35" rows="5" placeholder="Type your review here."
+                  ng-model="reviewCTRL.review.message" class="form-control"
+                  required></textarea><br>
+        <input type="submit" value="SUBMIT REVIEW" class="btn btn-info btn-sm">
+    </form>
+
+</div>

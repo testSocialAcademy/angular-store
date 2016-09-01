@@ -5,7 +5,7 @@ angular.module('store')
     .config(function ($routeProvider) {
         $routeProvider
             .when('/', {
-                    templateUrl: '/pages/default/home.html'
+                    templateUrl: '/pages/piven-sergey/home.html'
                 }
             )
     });
