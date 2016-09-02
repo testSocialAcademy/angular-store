@@ -33,7 +33,6 @@
         this.displayed = false;
 
         this.toggle = function () {
-            console.log(this.displayed);
             this.displayed = !this.displayed;
         };
 
@@ -46,6 +45,8 @@
         this.review = {};
 
         this.addReview = function(product){
+            this.review.createdOn = Date.now();
+
             product.messages.push(this.review);
             this.review = {};
         };

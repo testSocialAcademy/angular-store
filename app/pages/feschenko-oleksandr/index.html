@@ -60,7 +60,7 @@
                 </div>
 
                 <div class="product_main_info_af">
-                    <h2>{{product.name}}</h2>
+                    <h2>{{product.name | limitTo:50}}</h2>
                     <h3 ng-class="{old_prise_af: product.price2 }">{{product.price | currency}}</h3>
                     <h3 ng-show="product.price2">{{product.price2 | currency}}</h3>
                     <button type="button" class="btn btn-success">КУПИТЬ</button>
@@ -88,7 +88,7 @@
                     <h4>Отзывы</h4>
                     <ul class="product_additional-all_feedback_af">
                         <li ng-repeat="message in product.messages">
-                            <h3>{{message.author}}</h3>
+                            <h3>{{message.author}}  {{message.createdOn | date:"MM/dd/yyyy 'в' h:mm"}}</h3>
                             <p>{{message.message}}</p>
                         </li>
                     </ul>
