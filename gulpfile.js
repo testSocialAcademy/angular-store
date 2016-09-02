@@ -4,7 +4,7 @@ const concatCss = require('gulp-concat-css');
 const concat = require('gulp-concat');
 
 gulp.task('js combine', () => {
-    return gulp.src('app/pages/**/js/scripts/*.js')
+    return gulp.src(['app/js/app.js', 'app/pages/**/js/scripts/*.js'])
         .pipe(concat('all.js'))
         .pipe(babel({
             presets: ['es2015']
@@ -21,6 +21,6 @@ gulp.task('css combine', () => {
 gulp.task('build',['css combine', 'js combine']);
 
 gulp.task('watch', () => {
-    gulp.watch('./app/pages/**/js/scripts/*.js', ['js combine']);
+    gulp.watch(['app/js/app.js', './app/pages/**/js/scripts/*.js'], ['js combine']);
     gulp.watch('./app/pages/**/css/*.css', ['css combine']);
 });
