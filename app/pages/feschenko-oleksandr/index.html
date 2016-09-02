@@ -50,14 +50,8 @@
         <div ng-repeat="product in storeCtrl.products" ng-controller="DisplayController as displayCtrl" ng-hide="product.soldOut" class="clearfix_af product_af">
 
             <section class="clearfix_af">
-                <div class="product_gallery_af" ng-show="product.images.length" ng-controller="GalleryController as galleryCtrl">
-                    <img class="product_gallery-main_af" ng-src="{{product.images[galleryCtrl.current]}}">
-                    <ul class="product_gallery-preview_af">
-                        <li ng-repeat="preview in product.images">
-                           <img ng-src="{{preview}}" class="product_gallery-preview-image_af" ng-click="galleryCtrl.setCurrent($index)" ng-class="{ active_image_af:galleryCtrl.isCurrent($index) }">
-                        </li>
-                    </ul>
-                </div>
+
+                <product-images></product-images>
 
                 <div class="product_main_info_af">
                     <h2>{{product.name | limitTo:50}}</h2>
@@ -79,31 +73,10 @@
                     </li>
                 </ul>
 
-                <div ng-show="tabCtrl.isSet(1)">
-                    <h4>Описание</h4>
-                    <p>{{product.description}}</p>
-                </div>
+                <product-description ng-show="tabCtrl.isSet(1)"></product-description>
 
-                <div class="clearfix_af" ng-show="tabCtrl.isSet(2)">
-                    <h4>Отзывы</h4>
-                    <ul class="product_additional-all_feedback_af">
-                        <li ng-repeat="message in product.messages">
-                            <h3>{{message.author}}  {{message.createdOn | date:"MM/dd/yyyy 'в' h:mm"}}</h3>
-                            <p>{{message.message}}</p>
-                        </li>
-                    </ul>
+                <product-messages ng-show="tabCtrl.isSet(2)"></product-messages>
 
-                    <form class="feedback_form_af" name="reviewForm" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewForm.$valid && reviewCtrl.addReview(product)" novalidate>
-                        <h3>{{reviewCtrl.review.author}}</h3>
-                        <p>{{reviewCtrl.review.message}}</p>
-
-                        <input type="text" placeholder="Ваше имя..." ng-model="reviewCtrl.review.author" class="form-control feedback_form-author_af" required>
-                        <textarea placeholder="Текст сообщения..." ng-model="reviewCtrl.review.message" class="form-control feedback_form-message_af" required></textarea>
-
-                        <input type="submit" value="Оставить отзыв" class="btn btn-primary feedback_form-submit_af">
-                    </form>
-
-                </div>
             </section>
 
         </div>
