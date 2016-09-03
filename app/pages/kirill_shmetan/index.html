@@ -56,27 +56,24 @@
 
         <section ng-controller="PanelController as tabCTRL" class="row tab">
             <ul class="nav nav-tab">
-                <li class="prodDescription" ng-class="{active: tabCTRL.selected(1)}">
+                <li class="prodDescription" ng-class="{active: tabCTRL.isSelected(1)}">
                     <a href ng-click="tabCTRL.selectTab(1)">Описание</a>
                 </li>
-                <li class="prodMessage" ng-class="{active: tabCTRL.selected(2)}">
+                <li class="prodMessage" ng-class="{active: tabCTRL.isSelected(2)}">
                     <a href ng-click="tabCTRL.selectTab(2)">Отзывы</a>
                 </li>
             </ul>
 
-            <div ng-show="tabCTRL.selected(1)">
+            <div ng-show="tabCTRL.isSelected(1)">
                 <h3>Описание</h3>
                 <li>{{product.description[0]}}</li>
             </div>
 
-            <div ng-show="tabCTRL.selected(2)">
+            <div ng-show="tabCTRL.isSelected(2)">
                 <h3>Отзывы</h3>
                     <div ng-repeat="message in product.messages">
-                        <li>{{message.author[0]}}</li>
-                        <li>{{message.message[0]}}</li>
-
-                        <li>{{message.author[1]}}</li>
-                        <li>{{message.message[1]}}</li>
+                        <li>{{message.author}}</li>
+                        <li>{{message.message}}</li>
                     </div>
 
                 <form name="reviewForm" class="reviewForm" ng-controller="ReviewController as reviewCTRL"

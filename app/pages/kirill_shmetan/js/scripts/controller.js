@@ -7,11 +7,11 @@
     });
     appCams.controller("PanelController", function () {
         this.tab = 1;
-        this.selectTab = function (setTab) {
-            this.tab = setTab;
+        this.selectTab = function (tab) {
+            this.tab = tab;
         };
-        this.selected = function (getTab) {
-            return this.tab === getTab;
+        this.isSelected = function (tab) {
+            return this.tab === tab;
         }
     });
     appCams.controller("ReviewController", function () {
