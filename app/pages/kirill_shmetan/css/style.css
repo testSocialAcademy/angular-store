@@ -1,0 +1,68 @@
+.mainTop {
+    text-align: center;
+}
+
+.panel {
+    background-color: #696e6b ;
+    margin: 2px;
+}
+
+.block {
+    position: absolute;
+    margin: 20px 0 20px 500px;
+}
+
+.imgCamera {
+    display: block;
+    height: 320px;
+    margin: 10px 0 20px 40px;
+}
+
+.info {
+    color: #ffffff;
+}
+
+.itemPrice {
+    font-size: 20pt;
+}
+
+.btn-buy {
+    float: right;
+    background-color: #00b3ee;
+    padding: 10px 30px;
+    margin: 175px 70px;
+    display: block;
+}
+
+.moreInfo {
+    position: relative;
+    float: left;
+    background-color: yellow;
+    padding: 10px 30px;
+    margin: -211px 500px;
+    display: block;
+}
+.prodDescription {
+    background-color: #d3dad7;
+    float: right;
+    border-radius: 5px;
+    margin: -168px 351px;
+}
+
+.prodMessage {
+    background-color: #d3dad7;
+    float: right;
+    border-radius: 5px;
+    margin: -168px 264px;
+}
+
+.nav-tab {
+
+}
+.writeReviewButton {
+
+}
+
+.btn-submit{
+
+}
