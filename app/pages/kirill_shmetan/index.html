@@ -41,12 +41,12 @@
     </div>
 </header>
 
-<main role="main" class="container">
-    <div class="panel" ng-repeat="product in store.products" ng-hide="product.soldOut">
+<main role="main" class="container" ng-controller="CamStoreController as storeCTRL" >
+    <div class="panel" ng-repeat="product in storeCTRL.products" ng-hide="product.soldOut">
         <div class="block">
         <div class="info">
             <h2 class="prodName">{{product.title}}</h2>
-            <p class="itemPrice">{{product.price| currency: $}}</p>
+            <p class="itemPrice">{{product.price| currency: "Грн "}}</p>
         </div>
         </div>
             <button type="button" class="btn btn-buy">{{"Купить"}}</button>
@@ -57,23 +57,23 @@
         <section ng-controller="PanelController as tabCTRL" class="row tab">
             <ul class="nav nav-tab">
                 <li class="prodDescription" ng-class="{active: tabCTRL.isSelected(1)}">
-                    <a href ng-click="tabCTRL.selectTab(1)">Описание</a>
+                    <a href="#" ng-click="tabCTRL.setTab(1)">Описание</a>
                 </li>
                 <li class="prodMessage" ng-class="{active: tabCTRL.isSelected(2)}">
-                    <a href ng-click="tabCTRL.selectTab(2)">Отзывы</a>
+                    <a href="#" ng-click="tabCTRL.setTab(2)">Отзывы</a>
                 </li>
             </ul>
 
             <div ng-show="tabCTRL.isSelected(1)">
                 <h3>Описание</h3>
-                <li>{{product.description[0]}}</li>
+                <p>{{product.description[0]}}</p>
             </div>
 
             <div ng-show="tabCTRL.isSelected(2)">
                 <h3>Отзывы</h3>
                     <div ng-repeat="message in product.messages">
-                        <li>{{message.author}}</li>
-                        <li>{{message.message}}</li>
+                        <p>{{message.author}}</p>
+                        <p>{{message.message}}</p>
                     </div>
 
                 <form name="reviewForm" class="reviewForm" ng-controller="ReviewController as reviewCTRL"

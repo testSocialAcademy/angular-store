@@ -7,7 +7,7 @@
     });
     appCams.controller("PanelController", function () {
         this.tab = 1;
-        this.selectTab = function (tab) {
+        this.setTab = function (tab) {
             this.tab = tab;
         };
         this.isSelected = function (tab) {
