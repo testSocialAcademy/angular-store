@@ -8,4 +8,12 @@ angular.module('store')
                     templateUrl: '/pages/default/home.html'
                 }
             )
+            .when('/whiskey', {
+                    templateUrl: '/pages/feschenko-oleksandr/index.html'
+                }
+            )
+            .when('/whiskey/:id', {
+                    templateUrl: '/pages/feschenko-oleksandr/full_index.html'
+                }
+            )
     });

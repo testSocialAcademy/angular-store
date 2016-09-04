@@ -1,8 +1,10 @@
-<div class="product_gallery_af" ng-show="product.images.length">
-    <img class="product_gallery-main_af" ng-src="{{product.images[imagesCtrl.current]}}">
-    <ul class="product_gallery-preview_af">
-        <li ng-repeat="preview in product.images">
-            <img ng-src="{{preview}}" class="product_gallery-preview-image_af" ng-click="imagesCtrl.setCurrent($index)" ng-class="{ active_image_af:imagesCtrl.isCurrent($index) }">
+<div class="gallery_af" ng-show="storeCtrl.selectedProduct.images.length">
+    <div class="gallery_main_af">
+        <img class="gallery_main__image_af" ng-src="{{storeCtrl.selectedProduct.images[imagesCtrl.current]}}">
+    </div>
+    <ul class="gallery-preview_af">
+        <li ng-repeat="preview in storeCtrl.selectedProduct.images">
+            <img ng-src="{{preview}}" class="gallery-preview__image_af" ng-click="imagesCtrl.setCurrent($index)" ng-class="{ active_image_af:imagesCtrl.isCurrent($index) }">
         </li>
     </ul>
 </div>

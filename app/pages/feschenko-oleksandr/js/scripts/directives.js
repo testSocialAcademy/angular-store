@@ -1,6 +1,25 @@
 (function () {
-    angular.module('WhiskeyStore')
-        .directive("productImages", function() {
+    angular.module('store')
+        
+        .directive("productsAf",function() {
+            return {
+                restrict: "E",
+                templateUrl: "/pages/feschenko-oleksandr/templates/articles.html",
+                controller: "StoreController_af",
+                controllerAs: "storeCtrl"
+            }
+        })
+
+        .directive("productAf",function() {
+            return {
+                restrict: "E",
+                templateUrl: "/pages/feschenko-oleksandr/templates/article.html",
+                controller: "StoreController_af",
+                controllerAs: "storeCtrl"
+            }
+        })
+
+        .directive("productImagesAf", function() {
             return {
                 restrict: "E",
                 templateUrl: "/pages/feschenko-oleksandr/templates/images.html",
@@ -18,15 +37,15 @@
                 controllerAs: "imagesCtrl"
             };
         })
-
-        .directive("productDescription", function() {
+        
+        .directive("productDescriptionAf", function() {
             return {
                 restrict: "E",
                 templateUrl: "/pages/feschenko-oleksandr/templates/description.html"
             };
         })
 
-        .directive("productMessages", function() {
+        .directive("productMessagesAf", function() {
             return {
                 restrict: "E",
                 templateUrl: "/pages/feschenko-oleksandr/templates/messages.html"

@@ -1,16 +1,17 @@
 (function () {
-    var app_af = angular.module('WhiskeyStore', []);
+    angular.module('store')
 
-    app_af.controller("StoreController", ["$http" ,function ($http) {
-        var whiskeys = this;
-        whiskeys.products = [];
+    .controller("StoreController_af", ["$http","$routeParams", function ($http, $routeParams) {
+        var _this = this;
+        _this.products = [];
 
         $http.get('/pages/feschenko-oleksandr/product.json').success(function(data) {
-            whiskeys.products = data;
+            _this.products = data;
+            _this.selectedProduct = data[$routeParams.id];
         });
-    }]);
-    
-    app_af.controller('TabController', function(){
+    }])
+        
+    .controller('TabController_af', function(){
         this.tab = 1;
 
         this.setTab = function(tab){
@@ -20,21 +21,9 @@
         this.isSet = function(tab){
             return (this.tab === tab);
         };
-    });
+    })
 
-    app_af.controller('DisplayController',function(){
-        this.displayed = false;
-
-        this.toggle = function () {
-            this.displayed = !this.displayed;
-        };
-
-        this.isDisplayed = function(displayed) {
-            return (this.displayed === displayed);
-        }
-    });
-
-    app_af.controller('ReviewController', function () {
+    .controller('ReviewController_af', function () {
         this.review = {};
 
         this.addReview = function(product){
