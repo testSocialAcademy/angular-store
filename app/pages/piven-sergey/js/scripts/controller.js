@@ -1,5 +1,4 @@
 (function () {
-    var test = [];
     var id = 0;
     angular.module('store')
         .controller("StoreController_sp", function ($http) {
@@ -11,8 +10,6 @@
             $http({method: 'GET', url: '/pages/piven-sergey/product.json'})
                 .success(function (data) {
                     controller.products = data;
-                    test = data;
-                    console.log(controller.products);
                 });
         })
         .controller("AdditionalPanelController", function () {

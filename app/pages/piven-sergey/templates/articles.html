@@ -1,7 +1,7 @@
 <div class="panel" ng-repeat="item in store_sp.products">
 
     <div class="itemBlock">
-        <a ng-href="#/items/{{item.id}}"></a>
+        <a ng-href="#/consoles/{{item.id}}"></a>
         <div class="itemInfo">
             <h2>
                 {{item.title}}
@@ -11,7 +11,9 @@
         </div>
 
         <img ng-src="{{item.images[0]}}" class="itemImg">
-        <a ng-href="#/items/{{item.id}}" ng-click="store_sp.selectId(item.id)"><button class="btn btn-info moreInfo">MORE INFO</button></a>
+        <a ng-href="#/consoles/{{item.id}}" ng-click="store_sp.selectId(item.id)">
+            <button class="btn btn-info moreInfo">MORE INFO</button>
+        </a>
 
     </div>
 

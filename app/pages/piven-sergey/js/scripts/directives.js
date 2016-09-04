@@ -38,12 +38,4 @@ angular.module('store')
             controller: 'StoreController_sp',
             controllerAs: 'store_sp'
         }
-    })
-    .config(['$routeProvider', function ($routeProvider) {
-        $routeProvider
-            .when('/items/:id', {
-                templateUrl: '/pages/piven-sergey/templates/item.html',
-                controller: 'StoreController_sp',
-                controllerAs: 'store_sp',
-            });
-    }]);
+    });
