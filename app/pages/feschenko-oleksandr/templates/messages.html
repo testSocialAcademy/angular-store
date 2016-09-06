@@ -1,0 +1,20 @@
+<div class="clearfix_af">
+    <h4>Отзывы</h4>
+    <ul class="feedbacks_af">
+        <li ng-repeat="message in storeCtrl.selectedProduct.messages">
+            <h3>{{message.author}}  {{message.createdOn | date:"MM/dd/yyyy 'в' h:mm"}}</h3>
+            <p>{{message.message}}</p>
+        </li>
+    </ul>
+
+    <form class="feedback_form_af" name="reviewForm" ng-controller="ReviewController_af as reviewCtrl" ng-submit="reviewForm.$valid && reviewCtrl.addReview(storeCtrl.selectedProduct)" novalidate>
+        <h3>{{reviewCtrl.review.author}}</h3>
+        <p>{{reviewCtrl.review.message}}</p>
+
+        <input type="text" placeholder="Ваше имя..." ng-model="reviewCtrl.review.author" class="form-control feedback_form__author_af" required>
+        <textarea placeholder="Текст сообщения..." ng-model="reviewCtrl.review.message" class="form-control feedback_form__message_af" required></textarea>
+
+        <input type="submit" value="Оставить отзыв" class="btn btn-primary feedback_form__submit_af">
+    </form>
+
+</div>
