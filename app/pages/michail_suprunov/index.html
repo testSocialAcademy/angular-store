@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en" ng-app="mobilesStore">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mobile Phones</title>
+
+    <link rel="stylesheet" href="/bower_components/normalize-css/normalize.css">
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <!--<link rel="stylesheet" href="css/style.css">-->
+
+</head>
+<body class="body_mu" ng-controller="MobilesController as mobilesCtrl">
+<header class="container">
+    <div class="row">
+        <div class="header">
+            <h1 class="header__text">Mobiles store</h1>
+        </div>
+        <nav class="navbar navbar-inverse">
+            <div class="homelink">
+                <a class="homelink__link navbar-brand" href="/">Angular store</a>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<main role="main" class="container">
+    <div class="row mobile" ng-repeat="mobile in mobilesCtrl.mobiles" ng-class="{hide: mobile.soldOut}">
+        <div class="col-xs-5 main-info">
+            <div class="mobile-header">
+                <h3 class="mobile-header__title">{{mobile.title}}</h3>
+                <h4 class="mobile-header__price">{{mobile.price + " гривен"}}</h4>
+            </div>
+            <div class="row images">
+                <ul class="col-xs-2 small-images">
+                    <li ng-repeat="image in mobile.images"><img class="small-images__image" ng-src="{{image}}"/></li>
+                </ul>
+                <img class="col-xs-10 images__main" ng-src="{{mobile.images[0]}}"/>
+            </div>
+            <button type="button" class="btn btn-success btn-block main-info__button">Купить</button>
+        </div>
+        <div class="col-xs-7 mobile-info" ng-controller="PanelController_mu as panelCtrl" ng-hide="mobile.soldOut">
+            <ul class="nav nav-pills nav-justified">
+                <li ng-class="{active: panelCtrl.isSelected(1)}">
+                    <a class="nav-link" href ng-click="panelCtrl.selectTab(1)">Описание</a>
+                </li>
+                <li ng-class="{active: panelCtrl.isSelected(2)}">
+                    <a class="nav-link" href ng-click="panelCtrl.selectTab(2)">Отзывы</a>
+                </li>
+            </ul>
+            <div class="mobile-info-wrap">
+                <div class="mobile-info__description" ng-show="panelCtrl.isSelected(1)"
+                     ng-repeat="item in mobile.description">
+                    {{item}}
+                </div>
+                <div class="reviews" ng-show="panelCtrl.isSelected(2)" ng-repeat="item in mobile.reviews">
+                    <div class="reviews-item">
+                        <div class="reviews__author">{{item.author}}</div>
+                        <div class="reviews__message">{{item.message}}</div>
+                    </div>
+                </div>
+                <form name="reviewForm" class="interactive-review" ng-show="panelCtrl.isSelected(2)" ng-controller=" ReviewController_mu as
+                reviewCtrl" ng-submit="reviewForm.$valid && reviewCtrl.addReview(mobile)" novalidate>
+                    <div class="reviews-item">
+                        <div class="reviews__author">{{reviewCtrl.review.author}}</div>
+                        <div class="reviews__message">{{reviewCtrl.review.message}}</div>
+                    </div>
+                    <div class="form-group new-review">
+                        <input class="form-control new-review__author " type="text" ng-model="reviewCtrl.review.author"
+                        placeholder = "Ваше имя" required>
+                        <textarea class="form-control new-review__message" ng-model="reviewCtrl.review.message"
+                                  placeholder = "Ваш комментарий" required></textarea>
+                        <input class="btn btn-warning " type="Submit" value="Отправить">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+<script src="/bower_components/jquery/dist/jquery.js"></script>
+<script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="/bower_components/angular/angular.js"></script>
+
+
+<!--<script src="js/scripts/controller.js"></script>-->
+<script src="/js/app.js"></script>
+<script src="/js/all.js"></script>
+</body>
+</html>
