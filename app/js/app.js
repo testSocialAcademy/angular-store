@@ -16,4 +16,14 @@ angular.module('store')
                     templateUrl: '/pages/feschenko-oleksandr/full_index.html'
                 }
             )
+            .when('/consoles', {
+                    templateUrl: '/pages/piven-sergey/home.html'
+                }
+            )
+            .when('/consoles/:id', {
+                    templateUrl: '/pages/piven-sergey/templates/item.html',
+                    controller: 'StoreController_sp',
+                    controllerAs: 'store_sp'
+                }
+            )
     });
