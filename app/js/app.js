@@ -26,4 +26,13 @@ angular.module('store')
                     controllerAs: 'store_sp'
                 }
             )
+            .when('/mobiles', {
+                    templateUrl: '/pages/michail_suprunov/index.html'
+                }
+            )
+            .when('/mobiles/:id', {
+                    templateUrl: '/pages/michail_suprunov/full_index.html'
+                }
+            )
+            .otherwise({redirectTo: "/"})
     });

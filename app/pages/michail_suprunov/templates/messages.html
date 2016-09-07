@@ -1,0 +1,20 @@
+<div class="reviews" ng-repeat="item in mobilesCtrl.selectedMobile.reviews">
+    <div class="reviews-item">
+        <div class="reviews__author">{{item.author}}</div>
+        <div class="reviews__message">{{item.message}}</div>
+    </div>
+</div>
+<form name="reviewForm" class="interactive-review" ng-show="panelCtrl.isSelected(2)"
+      ng-submit="reviewForm.$valid && reviewCtrl.addReview(mobilesCtrl.selectedMobile)" novalidate>
+    <div class="reviews-item">
+        <div class="reviews__author">{{reviewCtrl.review.author}}</div>
+        <div class="reviews__message">{{reviewCtrl.review.message}}</div>
+    </div>
+    <div class="form-group new-review">
+        <input class="form-control new-review__author " type="text" ng-model="reviewCtrl.review.author"
+               placeholder = "Ваше имя" required>
+        <textarea class="form-control new-review__message" ng-model="reviewCtrl.review.message"
+                  placeholder = "Ваш комментарий" required></textarea>
+        <input class="btn btn-warning " type="Submit" value="Отправить">
+    </div>
+</form>
