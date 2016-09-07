@@ -1,0 +1,6 @@
+<div class="row images">
+    <ul class="col-xs-2 small-images">
+        <li ng-repeat="image in mobilesCtrl.selectedMobile.images"><img class="small-images__image" ng-src="{{image}}"/></li>
+    </ul>
+    <img class="col-xs-10 images__main" ng-src="{{mobilesCtrl.selectedMobile.images[0]}}"/>
+</div>
