@@ -1,0 +1,96 @@
+<div class="row" guitar-skr>
+    <a class="col-sm-4 col-md-4 none-decoration" ng-repeat="product in guitarSkr.productsSkr" ng-hide="product.soldOut" ng-href='#/guitars/{{product.id}}'>
+        <div class="row" ng-hide="product.soldOut">
+            <h5 class="col-sm-8 col-md-8">{{product.name}}</h5>
+
+            <div class="col-sm-2 col-md-2">
+                <h5 class="text-center warning" ng-show="product.price2"><s>{{product.price}}</s></h5>
+                <h4 ng-hide="product.price2">{{product.price}}</h4>
+                <h4 class="text-center">{{product.price2}}</h4>
+                <button type="button" class="btn btn-success">{{"купить" | uppercase}}</button>
+            </div>
+        </div>
+        <br/>
+        <div class="row" ng-show="product.images.length">
+            <div class="col-sm-10 col-md-10">
+                <img class="img-responsive" ng-src="{{product.images[0]}}"/>
+            </div>
+        </div>
+
+        <section>
+            <h4>Описание</h4>
+            <blockquote>{{product.description}}</blockquote>
+        </section>
+    </a>
+</div>
+<!--<div guitar-skr>-->
+    <!--<div class="col-sm-6 col-md-6" ng-repeat="product in storeSkr.productsSkr" ng-hide="product.soldOut">-->
+        <!--<div class="row" ng-hide="product.soldOut">-->
+            <!--<h4 class="col-sm-10 col-md-10">{{product.name}}</h4>-->
+
+            <!--<div class="col-sm-2 col-md-2">-->
+                <!--<h5 class="text-center warning" ng-show="product.price2"><s>{{product.price}}</s></h5>-->
+                <!--<h4 ng-hide="product.price2">{{product.price}}</h4>-->
+                <!--<h4 class="text-center">{{product.price2}}</h4>-->
+                <!--<button type="button" class="btn btn-success">{{"купить" | uppercase}}</button>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<br/>-->
+        <!--<div class="row"  ng-show="product.images.length">-->
+
+        <!--</div>-->
+
+        <!--<section ng-controller="TabController as tab">-->
+            <!--<ul class="nav nav-tabs">-->
+                <!--<li ng-class="{ active:tab.isSet(1) }">-->
+                    <!--<a href="" ng-click="tab.setTab(1)">Описание</a>-->
+                <!--</li>-->
+                <!--<li ng-class="{ active:tab.isSet(2) }">-->
+                    <!--<a href="" ng-click="tab.setTab(2)">Отзывы</a>-->
+                <!--</li>-->
+            <!--</ul>-->
+
+            <!--<div ng-show="tab.isSet(1)">-->
+                <!--<h4>Описание</h4>-->
+                <!--<blockquote>{{product.description}}</blockquote>-->
+            <!--</div>-->
+
+            <!--<div ng-show="tab.isSet(2)">-->
+                <!--<ul>-->
+                    <!--<h4>Отзывы</h4>-->
+                    <!--<li ng-repeat="message in product.messages">-->
+                        <!--<blockquote>-->
+                            <!--<strong>Сообщение</strong>-->
+                            <!--{{message.message}}-->
+                            <!--<cite class="clearfix">Автор: {{message.author}}</cite>-->
+                        <!--</blockquote>-->
+                    <!--</li>-->
+                <!--</ul>-->
+
+
+                <!--<form name="reviewForm" ng-controller="ReviewController as reviewCtrl"-->
+                      <!--ng-submit="reviewForm.$valid && reviewCtrl.addReview(product)" novalidate>-->
+
+                    <!--<blockquote>-->
+                        <!--{{reviewCtrl.message.message}}-->
+                        <!--<cite class="clearfix">Автор: {{reviewCtrl.message.author}}</cite>-->
+                    <!--</blockquote>-->
+
+                    <!--<h4>Отправить отзыв</h4>-->
+                    <!--<fieldset class="form-group">-->
+                            <!--<textarea ng-model="reviewCtrl.message.message" class="form-control"-->
+                                      <!--placeholder="Напишите короткий отзыв..." title="Review"></textarea>-->
+                    <!--</fieldset>-->
+                    <!--<fieldset class="form-group">-->
+                        <!--<input ng-model="reviewCtrl.message.author" type="email" class="form-control"-->
+                               <!--placeholder="jimmyDean@example.org" title="Email" required/>-->
+                    <!--</fieldset>-->
+                    <!--<fieldset class="form-group">-->
+                        <!--<input type="submit" class="btn btn-primary pull-right" value="Отправить отзыв" required/>-->
+                    <!--</fieldset>-->
+                <!--</form>-->
+            <!--</div>-->
+        <!--</section>-->
+    <!--</div>-->
+
+
