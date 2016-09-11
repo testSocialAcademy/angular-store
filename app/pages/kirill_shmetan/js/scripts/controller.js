@@ -5,7 +5,7 @@
     var appCams = angular.module('CamStore', []);
 
     appCams.controller("CamStoreController", function () {
-        this.products = slrCameras;
+        this.product = slrCameras;
     });
     appCams.controller("PanelController", function () {
         this.tab = 0;
@@ -14,12 +14,12 @@
                     };
         this.isSelected = function (tab) {
             return this.tab === tab;
-        }
+        };
     });
     appCams.controller("ReviewController", function () {
        this.message = {};
         this.addReview = function (product) {
-            product.message.push(this.message);
+            product.messages.push(this.message);
             this.message = {};
         };
     });
