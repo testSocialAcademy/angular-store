@@ -9,8 +9,8 @@
 
 
     <link rel="stylesheet" href="../../bower_components/normalize-css/normalize.css">
-    <link rel="stylesheet" href="../..//bower_components/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../..//css/main.css">
+    <link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body ng-controller="CamStoreController as store">
@@ -41,65 +41,72 @@
     </div>
 </header>
 
-<main role="main" class="container" ng-controller="CamStoreController as storeCTRL" >
+<main role="main" class="container">
+
+    <section ng-controller="CamStoreController as storeCTRL">
     <div class="panel" ng-repeat="product in storeCTRL.products" ng-hide="product.soldOut">
         <div class="block">
+
         <div class="info">
             <h2 class="prodName">{{product.title}}</h2>
             <p class="itemPrice">{{product.price| currency: "Грн "}}</p>
-        </div>
-        </div>
-            <button type="button" class="btn btn-buy">{{"Купить"}}</button>
 
-        <img class="imgCamera" ng-src="{{product.images[0]}}">
-        <button class="btn btn-inf moreInfo">Подробнее о товаре</button>
+        </div>
+
+            <button type="button" class="btn btn-buy">{{"Купить"}}</button>
+            <img class="imgCamera" ng-src="{{product.images[0]}}">
+
 
         <section ng-controller="PanelController as tabCTRL" class="row tab">
             <ul class="nav nav-tab">
                 <li class="prodDescription" ng-class="{active: tabCTRL.isSelected(1)}">
-                    <a href="#" ng-click="tabCTRL.setTab(1)">Описание</a>
+                    <a href ng-click="tabCTRL.setTab(1)">Описание</a>
                 </li>
                 <li class="prodMessage" ng-class="{active: tabCTRL.isSelected(2)}">
-                    <a href="#" ng-click="tabCTRL.setTab(2)">Отзывы</a>
+                    <a href ng-click="tabCTRL.setTab(2)">Отзывы</a>
                 </li>
             </ul>
 
-            <div ng-show="tabCTRL.isSelected(1)">
-                <h3>Описание</h3>
-                <p>{{product.description[0]}}</p>
-            </div>
+            <div class="info_block">
+                <div ng-show="tabCTRL.isSelected(1)">
+                <p ng-show="tabCTRL.tab">{{product.description[0]}}</p>
+                </div>
 
             <div ng-show="tabCTRL.isSelected(2)">
-                <h3>Отзывы</h3>
-                    <div ng-repeat="message in product.messages">
-                        <p>{{message.author}}</p>
-                        <p>{{message.message}}</p>
-                    </div>
 
-                <form name="reviewForm" class="reviewForm" ng-controller="ReviewController as reviewCTRL"
+                <div ng-repeat="message in product.messages">
+                    <h4>{{message.author}}</h4>
+                    <p>{{message.message}}</p>
+                </div>
+
+                <form name="reviewForm" class="review_Form" ng-controller="ReviewController as reviewCTRL"
                       ng-submit="reviewForm.$valid && reviewCTRL.addReview(product)" novalidate>
-
-                    <button class="btn btn-info writeReviewButton">Оставить отзыв</button>
+                    <div class="block_review">
+                        <h4>{{reviewCTRL.review.author}}</h4>
+                        <p>{{reviewCTRL.review.message}}</p>
+                    </div>
 
                     <input type="text" placeholder="Введите свое имя" ng-model="reviewCTRL.review.author"
                            class="form-control" required>
 
-                    <textarea cols="100" rows="10" placeholder="Свой отзыв можете оставить здесь"
+                    <textarea cols="50" rows="3" placeholder="Свой отзыв можете оставить здесь"
                               ng-model="reviewCTRL.review.message" class="form-control" required></textarea>
 
                     <input type="submit" value="Отправить отзыв" class="btn btn-info btn-submit">
-
                 </form>
+                </div>
             </div>
         </section>
-    </div>
-</main>
+        </div>
+        </div>
+    </section>
+  </main>
 
-<script src="../..//bower_components/jquery/dist/jquery.js"></script>
-<script src="../..//bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="../..//bower_components/angular/angular.min.js"></script>
+<script src="../../bower_components/jquery/dist/jquery.js"></script>
+<script src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="../../bower_components/angular/angular.min.js"></script>
 
 <script src="js/scripts/controller.js"></script>
-<script src="../..//js/all.js"></script>
+<script src="../../js/all.js"></script>
 </body>
 </html>

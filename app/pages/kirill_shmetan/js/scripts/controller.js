@@ -1,3 +1,5 @@
+"use strict";
+
 (function () {
 
     var appCams = angular.module('CamStore', []);
@@ -6,10 +8,10 @@
         this.products = slrCameras;
     });
     appCams.controller("PanelController", function () {
-        this.tab = 1;
+        this.tab = 0;
         this.setTab = function (tab) {
             this.tab = tab;
-        };
+                    };
         this.isSelected = function (tab) {
             return this.tab === tab;
         }
@@ -42,7 +44,7 @@ var slrCameras = [
                 message: "В своем сегменте цена-качество лучший выбор. Скорость съемки великолепная. Эргономичность: все кнопки и переключатели именно на тех местах, где им и положено быть, понятное вменяемое меню, кнопки быстрого доступа ко многим функциям камеры, которые приходится изменять по нескольку раз на дню. В руке, как влитой! очень прочный и защищенный корпус, удобный хват, очень продуманный интерфейс"
             }
         ],
-        soldOut: false
+        soldOut: true
     },
     {
         title: 'Nikon D810',

@@ -8,18 +8,23 @@
 }
 
 .block {
-    position: absolute;
-    margin: 20px 0 20px 500px;
+    position: relative;
+
 }
 
 .imgCamera {
     display: block;
-    height: 320px;
-    margin: 10px 0 20px 40px;
+    height: 200px;
+    margin: 30px 0 0 30px;
+    border-radius: 10px;
 }
 
 .info {
     color: #ffffff;
+    position: relative;
+    margin-bottom: -125px;
+    width: 300px;
+    margin-left: 330px;
 }
 
 .itemPrice {
@@ -28,10 +33,11 @@
 
 .btn-buy {
     float: right;
-    background-color: #00b3ee;
+    background-color: #37f660;
     padding: 10px 30px;
-    margin: 175px 70px;
-    display: block;
+    position: absolute;
+    display: inline-block;
+    margin: 4% 75%;
 }
 
 .moreInfo {
@@ -39,30 +45,79 @@
     float: left;
     background-color: yellow;
     padding: 10px 30px;
-    margin: -211px 500px;
     display: block;
 }
+.nav-tab{
+    border-bottom: 3px solid #f26522;
+    margin: 0 0 15px 15px;
+    width: 70%;
+    height: 0;
+    margin-left: 285px;
+    }
 .prodDescription {
-    background-color: #d3dad7;
-    float: right;
-    border-radius: 5px;
-    margin: -168px 351px;
+    display: none;
+    width: 154px;
+    height: 35px;
+    background: #f88f24;
+    text-align:center;
+    border-radius: 9px 9px 0 0;
+    top: -35px;
+    left: 25px;
+    position: relative;
+    }
+.prodDescription a{
+    color: black;
 }
-
+.prodDescription.active {
+    height: 45px;
+    bottom: 0;
+    z-index: 2;
+    background: #f88f24;
+    border: 2px solid #ea5100;
+    border-bottom: none;
+    top: -45px;
+    position: relative
+}
 .prodMessage {
-    background-color: #d3dad7;
-    float: right;
-    border-radius: 5px;
-    margin: -168px 264px;
+    display: inline-block;
+    width: 154px;
+    height: 35px;
+    background: #f88f24;
+    text-align:center;
+    top: -70px;
+    left: 182px;
+    border-radius: 9px 9px 0 0;
+    position: relative
 }
+.prodMessage a{
+    color: black;
+}
+.prodMessage.active {
+    height: 45px;
+    bottom: 0;
+    z-index: 2;
+    background: #f88f24;
+    border: 2px solid #ea5100;
+    border-bottom: none;
+    top: -80px;
+    position: relative
+}
+.info_block{
+    display: block;
+    width: 800px;
+    margin-left: 300px;
+}
+.tab {
 
-.nav-tab {
-
+}
+.review_Form{
+    display: block;
+    position: relative;
 }
 .writeReviewButton {
 
 }
 
 .btn-submit{
-
+color: black;
 }
