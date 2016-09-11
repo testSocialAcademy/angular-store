@@ -10,7 +10,7 @@ angular.module('store')
     .directive('articleSkr',function () {
         return{
             restrict:'E',
-            templateUrl: "/pages/serhii-kravchenko/template/article.html",
+            templateUrl: "/pages/serhii-kravchenko/templates/article.html",
             controller: 'ArticleControllerSkr',
             controllerAs: 'oneArticleSkr'
         }
@@ -19,7 +19,7 @@ angular.module('store')
     .directive("imgSkr", function () {
         return {
             restrict: 'E',
-            templateUrl: "/pages/serhii-kravchenko/template/images.html",
+            templateUrl: "/pages/serhii-kravchenko/templates/images.html",
             controller: 'GalleryControllerSkr',
             controllerAs: 'gallerySkr'
         }
@@ -27,23 +27,22 @@ angular.module('store')
     .directive("descSkr", function () {
         return {
             restrict: 'E',
-            templateUrl: "/pages/serhii-kravchenko/template/description.html",
+            templateUrl: "/pages/serhii-kravchenko/templates/description.html",
             controller: 'ArticleControllerSkr',
             controllerAs: 'oneArticleSkr'
         }
     })
-    .directive("tabSkr", function () {
+    .directive("messagesSkr", function () {
         return {
-            restrict: 'A',
-            templateUrl: "/pages/serhii-kravchenko/images.html",
-            controller: 'TabControllerSkr',
-            controllerAs: 'tabSkr'
+            restrict: 'E',
+            templateUrl: "/pages/serhii-kravchenko/templates/messages.html",
+            controller: 'ArticleControllerSkr',
+            controllerAs: 'oneArticleSkr'
         }
     })
     .directive("revSkr", function () {
         return {
             restrict: 'A',
-            templateUrl: "/pages/serhii-kravchenko/images.html",
             controller: 'ReviewControllerSkr',
             controllerAs: 'revSkr'
         }

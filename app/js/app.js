@@ -11,7 +11,7 @@ angular.module('store')
             .when('/guitars', {
                 templateUrl: '/pages/serhii-kravchenko/home.html'
             })
-            .when('/guitars:id', {
-                templateUrl: '/pages/serhii-kravchenko/full_article.html'
+            .when('/guitars/:id', {
+                templateUrl: '/pages/serhii-kravchenko/templates/article.html'
             })
     });

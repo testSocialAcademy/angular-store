@@ -7,14 +7,13 @@
             $http.get('/pages/serhii-kravchenko/product.json')
                 .success(function (data) {
                     controller.productsSkr = data;
-                    // console.log(ctrl.productsSkr);
                 })
         })
         .controller('ArticleControllerSkr', function ($http,$routeParams) {
             var controller = this;
-            $http({method:'GET', url: '/guitars' + $routeParams.id})
+            $http({method: 'GET', url:'/pages/serhii-kravchenko/product.json'})
                 .success(function (data) {
-                    controller.product = data;
+                    controller.product = data[$routeParams.id];
                 });
         })
         .controller('GalleryControllerSkr', function () {
@@ -22,17 +21,6 @@
 
             this.setCurrent = function (index) {
                 this.current = index;
-            };
-        })
-        .controller('TabControllerSkr', function () {
-            this.tab = 1;
-
-            this.setTab = function (tab) {
-                this.tab = tab;
-            };
-
-            this.isSet = function (tab) {
-                return (this.tab === tab);
             };
         })
         .controller('ReviewControllerSkr', function () {
