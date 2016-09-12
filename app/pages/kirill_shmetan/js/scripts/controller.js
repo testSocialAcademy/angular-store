@@ -1,4 +1,3 @@
-"use strict";
 
 (function () {
 
@@ -11,14 +10,15 @@
         this.tab = 0;
         this.setTab = function (tab) {
             this.tab = tab;
-                    };
+        };
         this.isSelected = function (tab) {
             return this.tab === tab;
         };
     });
-    appCams.controller("ReviewController", function () {
+    appCams.controller("RevController", function () {
        this.message = {};
-        this.addReview = function (product) {
+
+        this.addRev = function (product) {
             product.messages.push(this.message);
             this.message = {};
         };
