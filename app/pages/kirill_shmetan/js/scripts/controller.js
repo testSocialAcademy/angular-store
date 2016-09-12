@@ -16,11 +16,11 @@
         };
     });
     appCams.controller("RevController", function () {
-       this.message = {};
+       this.review = {};
 
         this.addRev = function (product) {
-            product.messages.push(this.message);
-            this.message = {};
+            product.messages.push(this.review);
+            this.review = {};
         };
     });
     
@@ -44,7 +44,7 @@ var slrCameras = [
                 message: "В своем сегменте цена-качество лучший выбор. Скорость съемки великолепная. Эргономичность: все кнопки и переключатели именно на тех местах, где им и положено быть, понятное вменяемое меню, кнопки быстрого доступа ко многим функциям камеры, которые приходится изменять по нескольку раз на дню. В руке, как влитой! очень прочный и защищенный корпус, удобный хват, очень продуманный интерфейс"
             }
         ],
-        soldOut: true
+        soldOut: false
     },
     {
         title: 'Nikon D810',
