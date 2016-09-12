@@ -1,0 +1,16 @@
+<div class="row">
+    <div class="row" ng-hide="oneArticleSkr.product.soldOut">
+        <h4 class="col-sm-10 col-md-10">{{oneArticleSkr.product.name}}</h4>
+
+        <div class="col-sm-2 col-md-2">
+            <h5 class="text-center warning" ng-show="oneArticleSkr.product.price2"><s>{{oneArticleSkr.product.price}}</s></h5>
+            <h4 ng-hide="oneArticleSkr.product.price2">{{oneArticleSkr.product.price}}</h4>
+            <h4 class="text-center">{{oneArticleSkr.product.price2}}</h4>
+            <button type="button" class="btn btn-success">{{"купить" | uppercase}}</button>
+        </div>
+    </div>
+    <br/>
+    <img-skr></img-skr>
+    <desc-skr></desc-skr>
+    <messages-skr></messages-skr>
+</div>

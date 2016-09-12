@@ -35,4 +35,10 @@ angular.module('store')
                 }
             )
             .otherwise({redirectTo: "/"})
+            .when('/guitars', {
+                templateUrl: '/pages/serhii-kravchenko/home.html'
+            })
+            .when('/guitars/:id', {
+                templateUrl: '/pages/serhii-kravchenko/templates/article.html'
+            })
     });
