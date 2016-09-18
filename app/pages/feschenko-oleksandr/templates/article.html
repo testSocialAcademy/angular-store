@@ -9,6 +9,7 @@
             <h3 ng-class="{old_prise_af: storeCtrl.selectedProduct.price2 }">{{storeCtrl.selectedProduct.price | currency}}</h3>
             <h3 ng-show="storeCtrl.selectedProduct.price2">{{storeCtrl.selectedProduct.price2 | currency}}</h3>
             <button type="button" class="btn btn-success btn-lg">КУПИТЬ</button>
+            <button type="button" class="btn btn-primary btn-lg" ng-click="storeCtrl.showCredit()">Кредит</button>
         </div>
     </section>
 
@@ -26,6 +27,10 @@
         <product-description-af ng-show="tabCtrl.isSet(1)"></product-description-af>
         <product-messages-af ng-show="tabCtrl.isSet(2)"></product-messages-af>
 
+    </section>
+
+    <section>
+        <product-credit-af ng-show="storeCtrl.showedCredit"></product-credit-af>
     </section>
 
 </div>

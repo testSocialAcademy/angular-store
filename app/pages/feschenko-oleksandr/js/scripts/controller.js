@@ -5,10 +5,16 @@
         var _this = this;
         _this.products = [];
 
+        _this.showedCredit = false;
+
         $http.get('/pages/feschenko-oleksandr/product.json').success(function(data) {
             _this.products = data;
             _this.selectedProduct = data[$routeParams.id];
         });
+        
+        this.showCredit = function() {
+            this.showedCredit = !this.showedCredit;
+        }
     }])
         
     .controller('TabController_af', function(){
@@ -32,8 +38,16 @@
             product.messages.push(this.review);
             this.review = {};
         };
-    });
-
+    })
+    
+    .controller('CreditController_af',["$scope","credit_af",function ($scope,credit_af) {
+        $scope.montlyPay = [];
+        
+        $scope.getMontlyPay = function (item) {
+            $scope.montlyPay = credit_af.showCredit(item);
+            return true;
+        }
+    }]);
     
     
 })();
