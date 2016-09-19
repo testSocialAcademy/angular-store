@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en" ng-app="CamStore">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Best cameras store</title>
+
+
+    <link rel="stylesheet" href="../../bower_components/normalize-css/normalize.css">
+    <link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body ng-controller="CamStoreController as store">
+
+<h1 class="mainTop">Магазин лучших фотоаппаратов</h1>
+
+<header class="container">
+    <div class="row">
+        <nav class="navbar navbar-inverse">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">Angular store</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                           aria-expanded="false">ТОВАРЫ <span class="caret"></span></a>
+
+                        <ul class="dropdown-menu">
+                            <li><a href="/pages/serhii-kravchenko/">Гитары</a></li>
+                            <li><a href="/pages/piven-sergey/">Приставки</a></li>
+                            <li><a href="/pages/kolisnyk-maksym/">Котики</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<main role="main" class="container">
+
+    <section ng-controller="CamStoreController as storeCTRL">
+    <div class="panel" ng-repeat="product in storeCTRL.product" ng-hide="product.soldOut">
+        <div class="block">
+
+        <div class="info">
+            <h2 class="prodName">{{product.title}}</h2>
+            <p class="itemPrice">{{product.price| currency: "Грн "}}</p>
+
+        </div>
+
+            <button type="button" class="btn btn-buy">{{"Купить"}}</button>
+            <img class="imgCamera" ng-src="{{product.images[0]}}">
+
+
+        <section ng-controller="PanelController as tabCTRL" class="row tab">
+            <ul class="nav nav-tab">
+                <li class="prodDescription" ng-class="{active: tabCTRL.isSelected(1)}">
+                    <a href ng-click="tabCTRL.setTab(1)">Описание</a>
+                </li>
+                <li class="prodMessage" ng-class="{active: tabCTRL.isSelected(2)}">
+                    <a href ng-click="tabCTRL.setTab(2)">Отзывы</a>
+                </li>
+            </ul>
+
+            <div class="info_block">
+                <div ng-show="tabCTRL.isSelected(1)">
+                <p ng-show="tabCTRL.tab">{{product.description[0]}}</p>
+                </div>
+
+            <div ng-show="tabCTRL.isSelected(2)" ng-controller="RevController as revCTRL">
+
+                <div ng-repeat="message in product.messages">
+                    <h4>{{message.author}}</h4>
+                    <p>{{message.message}}</p>
+                </div>
+                <div class="block_review">
+                    <h4>{{revCTRL.review.author}}</h4>
+                    <p>{{revCTRL.review.message}}</p>
+                </div>
+
+                <form id="revForm" name="reviewForm" class="review_Form"
+                      ng-submit="reviewForm.$valid && revCTRL.addRev(product)" novalidate>
+
+                    <input type="text" placeholder="Введите свое имя" ng-model="revCTRL.review.author"
+                           class="form-control" required>
+
+                    <textarea cols="50" rows="3" placeholder="Свой отзыв можете оставить здесь"
+                              ng-model="revCTRL.review.message" class="form-control" required></textarea>
+
+                    <p> <input type="submit" class="btn btn-info btn-submit" value="Отправить отзыв" ></p>
+                </form>
+                </div>
+            </div>
+        </section>
+        </div>
+        </div>
+    </section>
+  </main>
+
+<script src="../../bower_components/jquery/dist/jquery.js"></script>
+<script src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="../../bower_components/angular/angular.min.js"></script>
+
+<script src="js/scripts/controller.js"></script>
+<script src="../../js/all.js"></script>
+</body>
+</html>
