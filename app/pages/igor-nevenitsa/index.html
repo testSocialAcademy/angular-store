@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="/bower_components/normalize-css/normalize.css">
     <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/main.css">
+    <!--<link rel="stylesheet" href="css/style.css">-->
 
 
 
@@ -46,10 +47,10 @@
 
     <div class="row" >
         <div ng-controller="StoreController_IN as store">
-            <div ng-repeat="product in store.products">
-
+            <div ng-repeat="product in store.products" class="store-products-in">
+                <div class="jq-first">
                 <h1 class="product-name-in"> {{product.name}}</h1>
-
+                    <div class="jq-second">
 
                 <div class="prices-wrap-in">
                     <h3 class="price-one-in"> {{product.price | currency}} </h3>
@@ -62,20 +63,24 @@
                               <!--              GALLERY                   -->
 
                 <div class='gallery' ng-controller="GalleryController  as gallery" ng-show="product.images.length">
-                    <div class="big-pic-in">
-                        <img ng-src="{{product.images[gallery.current]}}" class="big-pic-in  "/>
-                    </div>
-                    <ul class="small-image-in-wrap">
-                        <li class="small-image-in  thumbnail img-responsive col-md-4"  ng-repeat="image in product.images" >
-                            <img ng-src="{{image}}" ng-click="gallery.setCurrent(product.images.indexOf(image))" />
-                        </li>
-                    </ul>
-                </div>
+                    <div class="gallery-wrap-in col-md-12 ">
+                        <div class="big-pic-in col-md-6">
+                            <img ng-src="{{product.images[gallery.current]}}" />
+                         </div>
+                         <div class="small-image-in-wrap col-md-7 center-block">
+                            <ul>
+                                <li class="small-image-in  thumbnail  "  ng-repeat="image in product.images" ng-click="gallery.setCurrent(product.images.indexOf(image))">
+                                    <img ng-src="{{image}}"  class="small-image-itself-in "/>
+                                </li>
+                            </ul>
+                        </div>
+                     </div> <!--/gallery-wrap-in-->
+                </div> <!--/ng-controller="GalleryController-->
 
                          <!-- ------        TABS       -------->
 
-                <section ng-controller="TabController as tab" >
-                    <ul class="nav nav-pills tabs-in ">
+                <section ng-controller="TabController as tab" class="tabs-in">
+                    <ul class="nav nav-pills  ">
                         <li ng-class="{ active:tab.isSet(1) }">
                             <a href="" ng-click="tab.setTab(1)" >Description</a>
                         </li>
@@ -88,12 +93,17 @@
                     <div ng-show="tab.isSet(1)">
                         <h4 id="description-txt-in">Description</h4>
                         <blockquote >{{product.description}}</blockquote>
+
+                        <strong class="camber-txt"> Camber: </strong> <span class="camber-txt-text">{{product.camber}}</span>
+                        <p><strong class="flex-txt"> Flex: </strong> <span class="flex-txt-text">{{product.flex}}</span></p>
+
+
                     </div>
 
                     <div ng-show="tab.isSet(2)">
                          <!--               REVIEWS                    -->
                             <div ng-repeat="review in product.messages" id="reviews-in">
-                                 <p> Author: {{review.author}} </p>
+                                 <p> Author: {{review.author}} <img src="../../images/snowboards/Delete.png" onclick="deleteReview (this)"> </p>
                                  <blockquote> {{review.message}} </blockquote>
 
                             </div>
@@ -113,13 +123,15 @@
                                 <input ng-model="reviewCtrl.review.author" id='email-from-in' type="email" class="form-control" placeholder="jimmyDean@example.org" title="Email" required/>
                             </fieldset>
                             <fieldset class="form-group">
-                                <input type="submit" class="btn btn-primary pull-right" value="Submit Review" />
+                                <input type="submit" class="btn btn-primary pull-right" value="Submit Review"  />
                             </fieldset>
 
                         </form>
                     </div>
                     </section>
-        </div>
+                   </div>
+                </div>
+            </div>
     </div>
 </main>
 
@@ -130,6 +142,7 @@
 
 <script src="/js/app.js"></script>
 <script src="/js/all.js"></script>
+<script src="js/scripts/script.js"></script>
 
 </body>
 </html>

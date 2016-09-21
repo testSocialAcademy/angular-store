@@ -1,0 +1,88 @@
+[
+  {
+    "id": 1,
+    "name": "Nitro Afterlife",
+    "description": "Лучшая парковая доска 2016 года по версии Transworld Snowboarding. Естeственно, имеет награду Good Wood. " +
+    "Отзывчивая, пуляет как с кататапульты, и, при этом, очень устойчива на джибе",
+    "camber": "Regular camber (low-profile)",
+    "flex": "Soft",
+    "price": 500,
+    "price2": 420,
+    "images": [
+
+      '../../../images/snowboards/NitroAfterlife1.jpg',
+      "../../../images/snowboards/nitro-afterlife-all-2017.jpg",
+      "../../../images/snowboards/afterlife-lifestyle-bg.png"
+    ],
+
+    "messages":[
+      {
+        "author": 'J.P. Walker',
+        "message": "Лучше не придумать"
+      },
+      {
+        "author": 'Shaun White',
+        "message": "У меня есть такая, доволен"
+      },
+      {
+        "author": 'Travis Rise',
+        "message": "Крутая доска"
+      }
+    ],
+    "soldOut": false
+  },
+
+
+  {
+    "id": 2,
+    "name": "Lib Tech Burtner Box Scratcher",
+    "description": "Награда Good Wood 2016, эта доска среди лучших парковых досок уходящего года. Оптимальный " +
+    "баланс между мягкостью и устойчивостью. Превратите весь склон в ваш личный парк.",
+    "camber": "Hybrid (reverse between inserts, flat to camber to tips)",
+    "flex": "Medium",
+    "price": 510,
+    "price2": 460,
+    "images": [
+      "../../../images/snowboards/lib-good-wood.jpg",
+      '../../../images/snowboards/lib-burtner.jpg'
+
+    ],
+    "messages":
+    [
+      {
+        "author": 'Ololoshkin777',
+        "message": "КРутая доска"
+      }
+    ],
+    "soldOut": false
+  },
+
+
+  {
+    "id": 3,
+    "name": "Capita Stairmaster",
+    "description": "Не важно, какая миссия стоит перед тобой сегодня: парк, пайп, " +
+    "джибовая серия или просто отратраченный склон. Доске Stairmaster Extreme не страшен никакой вызов " +
+    "- ведь это одна из самых лучших универсальных досок с традиционным прогибом на рынке.",
+    "camber": "Flat",
+    "flex": "Medium",
+    "price": 340,
+    "price2": 290,
+    "images": [
+      '../../../images/snowboards/capita-stairmaster.jpg',
+      "../../../images/snowboards/stairmaster1.jpg"
+    ],
+    "messages":
+    [
+      {
+        "author": 'HrenovAR',
+        "message": "Пойдет!"
+      },
+      {
+        "author": 'Джугашвили543',
+        "message": "Топлю на ней каждый день как батька"
+      }
+    ],
+    "soldOut": true
+  }
+]
