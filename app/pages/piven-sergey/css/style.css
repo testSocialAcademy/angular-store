@@ -71,3 +71,23 @@
 .ng-valid.ng-dirty {
     border-color: #5cb85c;
 }
+
+.creditsForItems {
+    position: relative;
+    background-color: #9acfea;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: large;
+    border: 1px solid grey;
+    display: none;
+}
+
+th, td {
+    padding: 5px 50px;
+}
+
+.closeCreditButton {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
