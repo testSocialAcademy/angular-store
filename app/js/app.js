@@ -34,18 +34,11 @@ angular.module('store')
                     templateUrl: '/pages/michail_suprunov/full_index.html'
                 }
             )
+            .otherwise({redirectTo: "/"})
             .when('/guitars', {
-            templateUrl: '/pages/serhii-kravchenko/home.html'
-        })
+                templateUrl: '/pages/serhii-kravchenko/home.html'
+            })
             .when('/guitars/:id', {
                 templateUrl: '/pages/serhii-kravchenko/templates/article.html'
             })
-            .when('/snowboards', {
-                templateUrl: '/pages/igor-nevenitsa/home.html'
-            })
-            .when('/snowboards/:id', {
-                templateUrl: '/pages/igor-nevenitsa/templates/full-articles.html'
-            })
-            .otherwise({redirectTo: "/"})
-
     });

@@ -1,0 +1,142 @@
+.clearfix_af:after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.ng-invalid.ng-dirty {
+    border-color: #FA787E;
+}
+.ng-valid.ng-dirty {
+    border-color: #78FA89;
+}
+
+.gallery_af {
+    float: left;
+    padding: 5px;
+}
+
+.gallery_main_af {
+    float: left;
+    width: 400px;
+}
+
+.gallery_main__image_af {
+    height: 500px;
+    margin: auto;
+    display: block;
+}
+
+.gallery-preview_af {
+    float: left;
+    list-style-type: none;
+    padding: 3px;
+}
+
+.gallery-preview__image_af {
+    width: 45px;
+    margin: 5px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.active_image_af {
+    border: 1px solid green;
+}
+
+.main_info_af {
+    float: left;
+    margin-left: 30px;
+}
+
+.feedbacks_af {
+    list-style-type: none;
+    padding: 0;
+}
+
+.feedback_form_af {
+    float: left;
+}
+
+.feedback_form__author_af,
+.feedback_form__message_af,
+.feedback_form__submit_af {
+    margin-bottom: 5px;
+}
+
+/*/////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+.product_af {
+    float: left;
+    padding: 20px;
+    width: 33.3%;
+    box-sizing: border-box;
+    border: 1px solid rgba(0,0,0,.1);
+}
+
+.product__name_af {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.product__image_af {
+    height: 300px;
+    margin: auto;
+    display: block;
+}
+
+.product__price_af {
+    font-size: 18px;
+    display: inline-block;
+    color: green;
+    font-weight: bold;
+}
+
+.old_prise_af {
+    text-decoration: line-through;
+    opacity: 0.5;
+    color: black;
+}
+
+.product__more_af {
+    float: right;
+    margin-top: 20px;
+}
+
+.dialog_wrapper_af {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    padding: 5% 0;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    background-color: rgba(0,0,0,.8);
+}
+
+.dialog_af {
+    background-color: white;
+    height: auto;
+    position: relative;
+    width: 55%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.dialog__close_af {
+    height: 30px;
+    width: 30px;
+    line-height: 27px;
+    border: 2px solid white;
+    background-color: black;
+    color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: -15px;
+    margin-top: -15px;
+    font-weight: 700;
+    font-size: 27px;
+}

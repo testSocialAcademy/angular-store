@@ -1,0 +1,7 @@
+<section ng-repeat="product in storeCtrl.products" ng-hide="product.soldOut" class="product_af">
+    <h2 class="product__name_af">{{product.name | limitTo:50}}</h2>
+    <img class="product__image_af" ng-src="{{product.images[0]}}">
+    <h3 class="product__price_af" ng-class="{old_prise_af: product.price2 }">{{product.price | currency}}</h3>
+    <h3 class="product__price_af" ng-show="product.price2">{{product.price2 | currency}}</h3>
+    <a class="btn btn-info product__more_af" href="#/whiskey/{{product.id}}">Подробнее</a>
+</section>

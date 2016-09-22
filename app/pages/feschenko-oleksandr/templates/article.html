@@ -1,0 +1,36 @@
+<div ng-hide="storeCtrl.selectedProduct.soldOut" class="clearfix_af">
+
+    <section class="clearfix_af">
+
+        <product-images-af></product-images-af>
+
+        <div class="main_info_af">
+            <h2>{{storeCtrl.selectedProduct.name | limitTo:50}}</h2>
+            <h3 ng-class="{old_prise_af: storeCtrl.selectedProduct.price2 }">{{storeCtrl.selectedProduct.price | currency}}</h3>
+            <h3 ng-show="storeCtrl.selectedProduct.price2">{{storeCtrl.selectedProduct.price2 | currency}}</h3>
+            <button type="button" class="btn btn-success btn-lg">КУПИТЬ</button>
+            <button type="button" class="btn btn-primary btn-lg" ng-click="storeCtrl.showCredit()">Кредит</button>
+        </div>
+    </section>
+
+
+    <section ng-controller="TabController_af as tabCtrl">
+        <ul class="nav nav-tabs">
+            <li ng-class="{ active:tabCtrl.isSet(1) }">
+                <a href="" ng-click="tabCtrl.setTab(1)">Описание</a>
+            </li>
+            <li ng-class="{ active:tabCtrl.isSet(2) }">
+                <a href="" ng-click="tabCtrl.setTab(2)">Отзывы</a>
+            </li>
+        </ul>
+
+        <product-description-af ng-show="tabCtrl.isSet(1)"></product-description-af>
+        <product-messages-af ng-show="tabCtrl.isSet(2)"></product-messages-af>
+
+    </section>
+
+    <section>
+        <product-credit-af ng-show="storeCtrl.showedCredit"></product-credit-af>
+    </section>
+
+</div>
