@@ -39,5 +39,18 @@
                 controller: "ReviewController_mu",
                 controllerAs: "reviewCtrl"
             };
+        })
+
+        .directive("creditMu", function() {
+            return {
+                restrict: "E",
+                templateUrl: "/pages/michail_suprunov/templates/credit.html",
+                scope: {
+                    price: "=",
+                    show: "="
+                },
+                controller: "CreditController_mu",
+                controllerAs: "creditCtrl"
+            };
         });
 })();

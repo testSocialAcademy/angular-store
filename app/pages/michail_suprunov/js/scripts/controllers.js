@@ -6,12 +6,17 @@
             var _this = this;
             this.mobiles = [];
             this.selectedMobile = {};
+            this.shownCredit = false;
 
             $http.get("../pages/michail_suprunov/mobiles.json").
                 success(function(data){
                     _this.mobiles = data;
                     _this.selectedMobile = data[$routeParams.id] ;
-            })
+            });
+
+            this.displayCredit = function () {
+                this.shownCredit = true;
+            }
         }])
 
         .controller('PanelController_mu', function(){
@@ -32,6 +37,13 @@
                 product.reviews.push(this.review);
                 this.review = {};
             };
-        });
+        })
+
+        .controller('CreditController_mu',[ "$scope", "Credit_mu", function($scope, Credit_mu){
+            $scope.creditInfo = [];
+            $scope.getCreditInfo = function(price){
+                $scope.creditInfo = Credit_mu.creditInfo(price);
+            }
+        }]);
 
 })();
