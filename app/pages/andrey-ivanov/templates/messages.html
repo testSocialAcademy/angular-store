@@ -1,0 +1,21 @@
+<div class="">
+    <h4>Отзывы</h4>
+    <ul class="">
+        <li ng-repeat="message in laptopCtrl.selectedProduct.messages">
+            <h3>{{message.author}}</h3>
+            <p>{{message.message}}</p>
+            <hr>
+        </li>
+    </ul>
+
+    <form class="" name="laptopRevForm" ng-controller="LaptopReviewController as laptopRevCtrl" ng-submit="laptopRevForm.$valid && laptopRevCtrl.addReview(laptopCtrl.selectedProduct)" novalidate>
+        <h3>{{laptopRevCtrl.review.author}}</h3>
+        <p>{{laptopRevCtrl.review.message}}</p>
+
+        <input type="text" placeholder="Ваше имя..." ng-model="laptopRevCtrl.review.author" class="form-control" required>
+        <textarea placeholder="Текст сообщения..." ng-model="laptopRevCtrl.review.message" class="form-control" required></textarea>
+
+        <input type="submit" value="Оставить отзыв" class="btn btn-primary">
+    </form>
+
+</div>

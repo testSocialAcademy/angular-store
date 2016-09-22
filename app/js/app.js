@@ -20,6 +20,8 @@ angular.module('store')
                     templateUrl: '/pages/piven-sergey/home.html'
                 }
             )
+
+
             .when('/consoles/:id', {
                     templateUrl: '/pages/piven-sergey/templates/item.html',
                     controller: 'StoreController_sp',
@@ -41,4 +43,12 @@ angular.module('store')
             .when('/guitars/:id', {
                 templateUrl: '/pages/serhii-kravchenko/templates/article.html'
             })
-    });
+            .when('/laptops', {
+                templateUrl: '/pages/andrey-ivanov/index.html'
+            })
+            .when('/laptops/:id', {
+                    templateUrl: '/pages/andrey-ivanov/full_index.html'
+                }
+            )
+    })
+;
