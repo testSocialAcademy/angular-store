@@ -1,0 +1,14 @@
+
+
+<div ng-show="tab.isSet(1)">
+    <h4 id="description-txt-in">Description</h4>
+    <blockquote >{{product[currentSnb.idCount].description}}</blockquote>
+    <blockquote ng-repeat="item in SnowboardsController.selectedSnowboard.description">
+        {{item}}>{{SnowboardsController.selectedSnowboard.description}}</blockquote>
+
+    <strong class="camber-txt"> Camber: </strong> <span class="camber-txt-text">{{product.camber}}</span>
+    <p><strong class="flex-txt"> Flex: </strong> <span class="flex-txt-text">{{product.flex}}</span></p>
+
+
+</div>
+

@@ -1,0 +1,27 @@
+<div ng-show="tab.isSet(2)">
+    <div ng-repeat="review in product.messages" id="reviews-in">
+        <p> Author: {{review.author}} <img src="../../images/snowboards/Delete.png" onclick="deleteReview (this)"> </p>
+        <blockquote> {{review.message}} </blockquote>
+
+    </div>
+    <form name="reviewForm" ng-submit="reviewForm.$valid && reviewCtrl.addReview(product)" novalidate>
+
+        <blockquote>
+
+            Review: {{reviewCtrl.review.message}}
+            <cite class="clearfix">Author: {{reviewCtrl.review.author}}</cite>
+        </blockquote>
+        <!--               REVIEWS    INPUT                -->
+        <h4>Submit a Review</h4>
+        <fieldset class="form-group">
+            <textarea ng-model="reviewCtrl.review.message" class="form-control" placeholder="Write a short review of the product..." title="Review"></textarea>
+        </fieldset>
+        <fieldset class="form-group">
+            <input ng-model="reviewCtrl.review.author" id='email-from-in' type="email" class="form-control" placeholder="jimmyDean@example.org" title="Email" required/>
+        </fieldset>
+        <fieldset class="form-group">
+            <input type="submit" class="btn btn-primary pull-right" value="Submit Review"  />
+        </fieldset>
+
+    </form>
+</div>
