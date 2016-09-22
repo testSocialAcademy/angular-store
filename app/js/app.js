@@ -41,10 +41,4 @@ angular.module('store')
             .when('/guitars/:id', {
                 templateUrl: '/pages/serhii-kravchenko/templates/article.html'
             })
-            .when('/snowboards', {
-                templateUrl: '/pages/igor-nevenitsa/home.html'
-            })
-            .when('/snowboards/:id', {
-                templateUrl: '/pages/igor-nevenitsa/templates/full-articles.html'
-            })
     });
