@@ -50,6 +50,15 @@
                 restrict: "E",
                 templateUrl: "/pages/feschenko-oleksandr/templates/messages.html"
             };
+        })
+    
+        .directive("productCreditAf",function() {
+            return {
+                restrict: "E",
+                templateUrl: "/pages/feschenko-oleksandr/templates/credit.html",
+                controller: "CreditController_af",
+                controllerAs: "creditCtrl"
+            }
         });
 })();
 
