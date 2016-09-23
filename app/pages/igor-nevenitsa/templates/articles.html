@@ -1,4 +1,5 @@
 
+ffffffffff
 
 <div class="" ng-repeat="product in SnowboardsController.boards">
 <div class="articles-wrap-in ">
@@ -14,7 +15,7 @@
             <h3 class="price-two-in articlesIN"> {{product.price2 | currency}} </h3>
             <button type="button" class="btn btn-primary btn-lg active" ng-hide="product.soldOut">Купить</button>
             <button type="button" class="btn btn-primary btn-lg" ng-show="product.soldOut" disabled="disabled">Купить</button>
-            <a ng-href="#/snowboards/{{product.id}}" ng-click="SnowboardsController.selectedSnowboard(product.id)">
+            <a ng-href="#/snowboards/{{product.id}}" > <!--ng-click="SnowboardsController.selectedSnowboard(product.id)"-->
                 <button class="btn btn-info ">О товаре</button>
             </a>
             <p ng-show="product.soldOut" class="sold-text-in">Товар закончился</p>

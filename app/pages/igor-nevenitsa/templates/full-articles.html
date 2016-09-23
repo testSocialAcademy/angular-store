@@ -1,21 +1,28 @@
-<!--
+
 
 <gallery-in></gallery-in>
-<description-in></description-in>
-<reviews-in></reviews-in>
 
-<ul class="nav nav-pills  ">
-    <li ng-class="{ active:tab.isSet(1) }">
-        <a href="" ng-click="tab.setTab(1)" >Description</a>
-    </li>
+<section ng-controller="TabController as tab" class="tabs-in">
+    <ul class="nav nav-pills  ">
+        <li ng-class="{ active:tab.isSet(1) }">
+            <a href="" ng-click="tab.setTab(1)" >Description</a>
+        </li>
 
-    <li ng-class="{ active:tab.isSet(2) }">
-        <a href="" ng-click="tab.setTab(2)">Reviews</a>
-    </li>
-</ul>-->
+        <li ng-class="{ active:tab.isSet(2) }">
+            <a href="" ng-click="tab.setTab(2)">Reviews</a>
+        </li>
+    </ul>
 
-<h4 id="description-txt-in">Description</h4>
-{{SnowboardsController.selectedSnowboard.description}}
+    <div ng-show="tab.isSet(1)">
 
-<strong class="camber-txt"> Camber: </strong> <span class="camber-txt-text">{{SnowboardsController.selectedSnowboard.camber}}</span>
-<p><strong class="flex-txt"> Flex: </strong> <span class="flex-txt-text">{{SnowboardsController.selectedSnowboard.flex}}</span></p>
+        <description-in></description-in>
+
+    </div>
+
+    <div ng-show="tab.isSet(2)" >
+
+
+        <reviews-in></reviews-in>
+
+        </div>
+</section>

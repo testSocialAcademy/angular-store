@@ -1,27 +1,38 @@
-<div ng-show="tab.isSet(2)">
-    <div ng-repeat="review in product.messages" id="reviews-in">
-        <p> Author: {{review.author}} <img src="../../images/snowboards/Delete.png" onclick="deleteReview (this)"> </p>
+<!--<div ng-show="tab.isSet(2)">-->
+    <div ng-repeat="review in SnbCtrl.selectedSnowboard.messages" id="reviews-in">
+        <p> Author: {{review.author}} <img src="../../../images/snowboards/Delete.png" onclick="deleteReview (this)"> </p>
         <blockquote> {{review.message}} </blockquote>
 
     </div>
-    <form name="reviewForm" ng-submit="reviewForm.$valid && reviewCtrl.addReview(product)" novalidate>
+    <form name="reviewForm" ng-submit="reviewForm.$valid && RevCtrl.addReview(SnbCtrl.selectedSnowboard)" novalidate>
 
         <blockquote>
 
-            Review: {{reviewCtrl.review.message}}
-            <cite class="clearfix">Author: {{reviewCtrl.review.author}}</cite>
+            Review: {{RevCtrl.review.message}}
+            <cite class="clearfix">Author: {{RevCtrl.review.author}}</cite>
         </blockquote>
         <!--               REVIEWS    INPUT                -->
         <h4>Submit a Review</h4>
         <fieldset class="form-group">
-            <textarea ng-model="reviewCtrl.review.message" class="form-control" placeholder="Write a short review of the product..." title="Review"></textarea>
+            <textarea ng-model="RevCtrl.review.message" class="form-control" placeholder="Write a short review of the product..." title="Review"></textarea>
         </fieldset>
         <fieldset class="form-group">
-            <input ng-model="reviewCtrl.review.author" id='email-from-in' type="email" class="form-control" placeholder="jimmyDean@example.org" title="Email" required/>
+            <input ng-model="RevCtrl.review.author" id='email-from-in' type="email" class="form-control" placeholder="jimmyDean@example.org" title="Email" required/>
         </fieldset>
         <fieldset class="form-group">
             <input type="submit" class="btn btn-primary pull-right" value="Submit Review"  />
         </fieldset>
 
     </form>
-</div>
+<!--
+</div>-->
+
+
+
+<!--
+.controller('ReviewController', function() {
+this.review = {};
+this.addReview = function(product) {
+product.messages.push(this.review);
+this.review = {};
+};-->

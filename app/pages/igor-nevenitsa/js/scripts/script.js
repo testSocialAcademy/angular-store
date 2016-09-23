@@ -1,13 +1,4 @@
-/*
-$(document).ready(function(){
 
-    $("#reviews-in blockquote:not(:first)").hide();
-    $("#reviews-in  p").click(function(){
-    $(this).next("blockquote").slideToggle("slow").siblings("blockquote:visible").slideUp("slow");
-});
-
-    });
-*/
 
 $(document).ready(function(){
 

@@ -1,13 +1,17 @@
-<div class='gallery'  ng-show="product.images.length">
-<div class="gallery-wrap-in col-md-12 ">
-    <div class="big-pic-in col-md-6">
-        <img ng-src="{{product[currentSnb.idCount].images[GalleryController.current]}}" />
-    </div>
-    <div class="small-image-in-wrap col-md-7 center-block">
-        <ul>
-            <li class="small-image-in  thumbnail  "  ng-repeat="image in product.images" ng-click="GalleryController.setCurrent(product.images.indexOf(image))">
-                <img ng-src="{{image}}"  class="small-image-itself-in "/>
-            </li>
-        </ul>
-    </div>
-</div> <!--/gallery-wrap-in-->
+
+
+    <div class='gallery' ng-show="SnbCtrl.selectedSnowboard.images.length">
+        <div class="gallery-wrap-in col-md-12 ">
+            <div class="big-pic-in col-md-6">
+                <img ng-src="{{SnbCtrl.selectedSnowboard.images[gallery.current]}}" />
+            </div>
+            <div class="small-image-in-wrap col-md-7 center-block">
+                <ul>
+                    <li class="small-image-in  thumbnail  "  ng-repeat="image in SnbCtrl.selectedSnowboard.images" ng-click="gallery.setCurrent(SnbCtrl.selectedSnowboard.images.indexOf(image))">
+                        <img ng-src="{{image}}"  class="small-image-itself-in "/>
+                    </li>
+                </ul>
+            </div>
+        </div> <!--/gallery-wrap-in-->
+    </div> <!--/ng-controller="GalleryController-->
+

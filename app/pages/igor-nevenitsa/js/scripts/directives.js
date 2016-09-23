@@ -4,7 +4,7 @@ angular.module('store')
             restrict: 'E',
             templateUrl: '/pages/igor-nevenitsa/templates/articles.html',
             controller: 'SnowboardsController',
-            controllerAs: 'SnowboardsController'
+            controllerAs: 'SnbCtrl'
         }
     })
     .directive('galleryIn', function () {
@@ -22,7 +22,7 @@ angular.module('store')
            /* controller: 'TabController',
             controllerAs: 'tab'*/
             controller: 'SnowboardsController',
-            controllerAs: 'SnowboardsController'
+            controllerAs: 'SnbCtrl'
         }
     })
     .directive('reviewsIn', function () {
