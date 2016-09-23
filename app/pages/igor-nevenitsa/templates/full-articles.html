@@ -2,6 +2,12 @@
 
 <gallery-in></gallery-in>
 
+<h3 class="price-one-in"> {{SnbCtrl.selectedSnowboard.price | currency}} </h3>
+<h3 class="price-two-in articlesIN"> {{SnbCtrl.selectedSnowboard.price2 | currency}} </h3>
+<button type="button" class="btn btn-primary btn-lg active" ng-hide="SnbCtrl.selectedSnowboard.soldOut">Купить</button>
+<button type="button" class="btn btn-primary btn-lg" ng-show="SnbCtrl.selectedSnowboard.soldOut" disabled="disabled">Купить</button>
+<p ng-show="SnbCtrl.selectedSnowboard.soldOut" class="sold-text-in">Товар закончился</p>
+
 <section ng-controller="TabController as tab" class="tabs-in">
     <ul class="nav nav-pills  ">
         <li ng-class="{ active:tab.isSet(1) }">
