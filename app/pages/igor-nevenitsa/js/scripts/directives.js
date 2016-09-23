@@ -1,5 +1,5 @@
 angular.module('store')
-    .directive('mainBodyin', function () {
+    .directive('mainBody', function () {
         return {
             restrict: 'E',
             templateUrl: '/pages/igor-nevenitsa/templates/articles.html',

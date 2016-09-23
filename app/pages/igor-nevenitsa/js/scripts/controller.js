@@ -1,35 +1,11 @@
 (function () {
     angular.module('store')
-         /*   .controller('SnowboardsController', ["$http", function($http) {
-                var _this = this;
-                var id;
-                this.boards = [];
-                this.selectedSnowboard = {};
-                _this.selectedSnowboard = function (id_snb) {
-                    id = id_snb;
-                    console.log(id);
-                };
-
-
-                $http.get("/pages/igor-nevenitsa/boards.json")
-                    .success(function(data){
-                        _this.boards = data;
-                        /!*success(function (data) {
-                            data.forEach(function (dataMap) {
-                                if(dataMap.id == $routeParams.id) {
-                                    _this.selectedSnowboard = dataMap;
-                                }
-                            });
-                        })*!/
-                })
-            }])*/
-
                 .controller('SnowboardsController', ["$http", "$routeParams", function ($http, $routeParams) {
 
                     var _this = this;
                     this.boards = [];
                     this.selectedSnowboard = {};
-                    console.log(this.boards + "  " + "SnowboardsController");
+                    console.log(this.boards + "  SnowboardsController");
 
                     $http({method: 'GET', url: '/pages/igor-nevenitsa/boards.json' })/*+ $routeParams.id*/
 
@@ -47,18 +23,11 @@
                         })
                 }])
 
-
-
-
             .controller("StoreController_IN", function () {
                 this.products = SnowboardsController.boards;
                 console.log(this.products + "  StoreController_IN");
             })
 
-            /*.controller("currentSnb", function () {
-
-                   this.selectedSnowboardID = id;
-            })*/
 
             .controller('TabController', function(){
             this.tab = 1;
@@ -78,11 +47,7 @@
                 this.current = newGallery || 0;
                 };
              })
-            /*.controller('NotesCreateControllerIN', [function() {
-                this.saveNote = function(note){
-                    $http({method: 'POST', url: '/notes', data: note});
-                };
-            }])*/
+
 
             .controller('ReviewController', function() {
             this.review = {};
@@ -93,4 +58,42 @@
 
              });
 
+
+    /*.controller("currentSnb", function () {
+
+     this.selectedSnowboardID = id;
+     })*/
+
+    /*.controller('NotesCreateControllerIN', [function() {
+     this.saveNote = function(note){
+     $http({method: 'POST', url: '/notes', data: note});
+     };
+     }])*/
+
+    /*   .controller('SnowboardsController', ["$http", function($http) {
+     var _this = this;
+     var id;
+     this.boards = [];
+     this.selectedSnowboard = {};
+     _this.selectedSnowboard = function (id_snb) {
+     id = id_snb;
+     console.log(id);
+     };
+
+
+     $http.get("/pages/igor-nevenitsa/boards.json")
+     .success(function(data){
+     _this.boards = data;
+     /!*success(function (data) {
+     data.forEach(function (dataMap) {
+     if(dataMap.id == $routeParams.id) {
+     _this.selectedSnowboard = dataMap;
+     }
+     });
+     })*!/
+     })
+     }])*/
+
+
 })();
+

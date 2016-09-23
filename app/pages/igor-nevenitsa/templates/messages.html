@@ -1,4 +1,4 @@
-<!--<div ng-show="tab.isSet(2)">-->
+
     <div ng-repeat="review in SnbCtrl.selectedSnowboard.messages" id="reviews-in">
         <p> Author: {{review.author}} <img src="../../../images/snowboards/Delete.png" onclick="deleteReview (this)"> </p>
         <blockquote> {{review.message}} </blockquote>
@@ -24,15 +24,5 @@
         </fieldset>
 
     </form>
-<!--
-</div>-->
 
 
-
-<!--
-.controller('ReviewController', function() {
-this.review = {};
-this.addReview = function(product) {
-product.messages.push(this.review);
-this.review = {};
-};-->
