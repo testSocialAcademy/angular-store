@@ -36,7 +36,7 @@ angular.module('store')
                     templateUrl: '/pages/michail_suprunov/full_index.html'
                 }
             )
-            .otherwise({redirectTo: "/"})
+
             .when('/guitars', {
                 templateUrl: '/pages/serhii-kravchenko/home.html'
             })
@@ -50,5 +50,6 @@ angular.module('store')
                     templateUrl: '/pages/andrey-ivanov/full_index.html'
                 }
             )
+            .otherwise({redirectTo: "/"})
     })
 ;
