@@ -21,7 +21,6 @@ angular.module('store')
                 }
             )
 
-
             .when('/consoles/:id', {
                     templateUrl: '/pages/piven-sergey/templates/item.html',
                     controller: 'StoreController_sp',
@@ -36,7 +35,6 @@ angular.module('store')
                     templateUrl: '/pages/michail_suprunov/full_index.html'
                 }
             )
-
             .when('/guitars', {
                 templateUrl: '/pages/serhii-kravchenko/home.html'
             })
