@@ -7,6 +7,9 @@
             </div>
             <mobile-images></mobile-images>
             <button type="button" class="btn btn-success btn-block main-info__button">Купить</button>
+            <button type="button" class="btn btn-info btn-block main-info__button"
+                    ng-click="mobilesCtrl.displayCredit()">Оформить кредит
+            </button>
         </div>
         <div class="col-xs-7 mobile-info" ng-controller="PanelController_mu as panelCtrl" ng-hide="mobile.soldOut">
             <ul class="nav nav-pills nav-justified">
@@ -22,5 +25,7 @@
                 <mobile-messages ng-show="panelCtrl.isSelected(2)"></mobile-messages>
             </div>
         </div>
+        <credit-mu price="mobilesCtrl.selectedMobile.price" show="mobilesCtrl.shownCredit"
+                   ng-show="mobilesCtrl.shownCredit"></credit-mu>
     </div>
 </main>
