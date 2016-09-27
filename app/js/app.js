@@ -48,6 +48,13 @@ angular.module('store')
                     templateUrl: '/pages/andrey-ivanov/full_index.html'
                 }
             )
+            .when('/snowboards', {
+                templateUrl: '/pages/igor-nevenitsa/home.html'
+            })
+            .when('/snowboards/:id', {
+                    templateUrl: '/pages/igor-nevenitsa/templates/full-articles.html'
+                }
+            )
             .otherwise({redirectTo: "/"})
     })
 ;
