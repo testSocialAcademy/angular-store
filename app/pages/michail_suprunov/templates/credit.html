@@ -1,0 +1,45 @@
+<div class="credit-wrapper"> {{getCreditInfo(price)}}
+    <div class="credit-wrapper__inner">
+        <button class="credit__close" ng-click="show = false">Х</button>
+        <div class="credit">
+            <table class="credit-table table table-bordered">
+                <caption class="credit-table__heading">Условия кредита для данного продукта ценой {{price +
+                    " гривен"}}
+                </caption>
+                <tr class="credit-table__title-raw">
+                    <th class="credit-table__titles">Срок кредита</th>
+                    <th class="credit-table__titles">Часть за продукт (грн.)</th>
+                    <th class="credit-table__titles">Процентные отчисления (грн.)</th>
+                    <th class="credit-table__titles">Общая ежемесячная оплата (грн.)</th>
+                </tr>
+                <tr class="credit-table__info-raw">
+                    <td class="credit-table__info">На 2 месяца</td>
+                    <td class="credit-table__info">{{creditInfo[0][0]}}</td>
+                    <td class="credit-table__info">{{creditInfo[0][1]}}</td>
+                    <td class="credit-table__info">{{creditInfo[0][2]}}</td>
+                </tr>
+                <tr class="credit-table__info-raw">
+                    <td class="credit-table__info">На 6 месяцев</td>
+                    <td class="credit-table__info">{{creditInfo[1][0]}}</td>
+                    <td class="credit-table__info">{{creditInfo[1][1]}}</td>
+                    <td class="credit-table__info">{{creditInfo[1][2]}}</td>
+                </tr>
+                <tr class="credit-table__info-raw">
+                    <td class="credit-table__info">На 12 месяцев</td>
+                    <td class="credit-table__info">{{creditInfo[2][0]}}</td>
+                    <td class="credit-table__info">{{creditInfo[2][1]}}</td>
+                    <td class="credit-table__info">{{creditInfo[2][2]}}</td>
+                </tr>
+            </table>
+            <form action="" class="credit-form">
+                <p><span class="credit-form__info-text">Выберите подходящий вариант кредита</span>
+                    <select name="credit" id="" class="credit-form__select" required>
+                        <option value="2" class="credit-form__variant">На 2 месяца</option>
+                        <option value="6" class="credit-form__variant">На 6 месяцев</option>
+                        <option value="12" class="credit-form__variant">На 12 месяцев</option>
+                    </select></p>
+                <input type="submit" class="credit-form__submit btn btn-info btn-block" value="Оформить">
+            </form>
+        </div>
+    </div>
+</div>

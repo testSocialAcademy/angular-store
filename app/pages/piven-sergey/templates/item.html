@@ -5,11 +5,15 @@
             {{store_sp.products[curr.counter].title}}
         </h2>
         <p class="itemPrice">{{store_sp.products[curr.counter].price| currency: $}}</p>
+
         <button class="btn btn-success btn-lg buyButton">BUY ITEM</button>
+        <button class="btn btn-info btn-lg creditButton">CREDIT</button>
 
     </div>
 
     <img ng-src="{{store_sp.products[curr.counter].images[0]}}" class="itemImg">
+
+    <show-credit></show-credit>
 
     <div class="panel">
         <section ng-init="tab = 1" ng-controller="AdditionalPanelController as additionalPanenCTRL"

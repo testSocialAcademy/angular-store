@@ -38,4 +38,12 @@ angular.module('store')
             controller: 'StoreController_sp',
             controllerAs: 'store_sp'
         }
-    });
+    })
+    .directive('showCredit', function () {
+    return {
+        restrict: 'E',
+        templateUrl: '/pages/piven-sergey/templates/credit.html',
+        controller: 'StoreController_sp',
+        controllerAs: 'store_sp'
+    }
+});

@@ -20,6 +20,7 @@ angular.module('store')
                     templateUrl: '/pages/piven-sergey/home.html'
                 }
             )
+
             .when('/consoles/:id', {
                     templateUrl: '/pages/piven-sergey/templates/item.html',
                     controller: 'StoreController_sp',
@@ -34,17 +35,19 @@ angular.module('store')
                     templateUrl: '/pages/michail_suprunov/full_index.html'
                 }
             )
-            .otherwise({redirectTo: "/"})
             .when('/guitars', {
                 templateUrl: '/pages/serhii-kravchenko/home.html'
             })
             .when('/guitars/:id', {
                 templateUrl: '/pages/serhii-kravchenko/templates/article.html'
             })
-            .when('/snowboards', {
-                templateUrl: '/pages/igor-nevenitsa/home.html'
+            .when('/laptops', {
+                templateUrl: '/pages/andrey-ivanov/index.html'
             })
-            .when('/snowboards/:id', {
-                templateUrl: '/pages/igor-nevenitsa/templates/full-articles.html'
-            })
-    });
+            .when('/laptops/:id', {
+                    templateUrl: '/pages/andrey-ivanov/full_index.html'
+                }
+            )
+            .otherwise({redirectTo: "/"})
+    })
+;

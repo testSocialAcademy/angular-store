@@ -1,0 +1,34 @@
+<div class="creditsForItems" ng-controller="current as curr">
+    <table>
+        <tr>
+            <th>TERM</th>
+            <th>PERCENT</th>
+            <th>MONTHLY PAYMENT</th>
+        </tr>
+        <tr>
+            <td>2 MONTHS</td>
+            <td>4%</td>
+            <td>{{resultTwoMonths | currency}}</td>
+            <td>
+                <button class="btn btn-success btn-sm">BUY WITH CREDIT</button>
+            </td>
+        </tr>
+        <tr>
+            <td>6 MONTHS</td>
+            <td>5% + {{1 | currency}}</td>
+            <td>{{resultSixMonths | currency}}</td>
+            <td>
+                <button class="btn btn-success btn-sm">BUY WITH CREDIT</button>
+            </td>
+        </tr>
+        <tr>
+            <td>12 MONTHS</td>
+            <td>10% + {{2 | currency}}</td>
+            <td>{{resultTwelveMonths | currency}}</td>
+            <td>
+                <button class="btn btn-success btn-sm">BUY WITH CREDIT</button>
+            </td>
+        </tr>
+    </table>
+    <button class="btn btn-warning closeCreditButton">CLOSE</button>
+</div>
