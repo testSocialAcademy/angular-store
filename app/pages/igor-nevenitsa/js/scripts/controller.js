@@ -14,7 +14,7 @@
                             data.forEach(function (dataMap) {
                                 if(dataMap.id == $routeParams.id) {
                                     _this.selectedSnowboard = dataMap;
-                                    console.log(SnowboardsController.boards + "  " + "SnowboardsController2");
+                                    console.log(_this.boards + "  " + "SnowboardsController2");
                                 }
                             });
                         })
@@ -42,6 +42,7 @@
             })
 
             .controller('GalleryController', function(){
+
             this.current = 0;
             this.setCurrent = function(newGallery){
                 this.current = newGallery || 0;

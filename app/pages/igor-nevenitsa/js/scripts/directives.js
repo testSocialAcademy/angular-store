@@ -1,5 +1,5 @@
 angular.module('store')
-    .directive('mainBody', function () {
+    .directive('mainBodyin', function () {
         return {
             restrict: 'E',
             templateUrl: '/pages/igor-nevenitsa/templates/articles.html',
@@ -12,7 +12,7 @@ angular.module('store')
             restrict: 'E',
             templateUrl: '/pages/igor-nevenitsa/templates/images.html',
             controller: 'GalleryController',
-            controllerAs: 'gallery'
+            controllerAs: 'SnbGallery'
          }
     })
     .directive('descriptionIn', function () {
