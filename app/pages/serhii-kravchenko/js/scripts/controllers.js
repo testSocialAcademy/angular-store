@@ -9,9 +9,9 @@
                     controller.productsSkr = data;
                 })
         })
-        .controller('ArticleControllerSkr', function ($http,$routeParams) {
+        .controller('ArticleControllerSkr', function ($http, $routeParams) {
             var controller = this;
-            $http({method: 'GET', url:'/pages/serhii-kravchenko/product.json'})
+            $http({method: 'GET', url: '/pages/serhii-kravchenko/product.json'})
                 .success(function (data) {
                     controller.product = data[$routeParams.id];
                 });
@@ -30,7 +30,15 @@
                 product.messages.push(this.message);
                 this.message = {};
             };
-        });
+        })
+        .controller('CreditControllerSkr', ["$scope", "creditSkr", function ($scope, creditSkr) {
+            $scope.calculation = [];
+
+            $scope.getCalculation = function (item) {
+                $scope.calculation = creditSkr.showCreditSkr(item);
+                return true;
+            }
+        }]);
 
     // var products = [{
     //     name: 'Электрогитара Gibson ES-335 Studio EB BT',

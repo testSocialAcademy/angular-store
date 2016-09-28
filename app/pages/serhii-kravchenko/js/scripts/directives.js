@@ -15,6 +15,14 @@ angular.module('store')
             controllerAs: 'oneArticleSkr'
         }
     })
+    .directive('creditSkr',function () {
+        return{
+            restrict: 'E',
+            templateUrl: "/pages/serhii-kravchenko/templates/credit.html",
+            controller: 'CreditControllerSkr',
+            controllerAs: 'creditSkr'
+        }
+    })
 
     .directive("imgSkr", function () {
         return {
