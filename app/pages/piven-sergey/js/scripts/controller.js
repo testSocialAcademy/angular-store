@@ -1,20 +1,23 @@
 (function () {
     angular.module('store')
-        .controller("StoreController_sp", ['$http', '$scope', '$routeParams', 'Credit', function ($http, $scope, $routeParams, Credit) {
+        .controller("StoreController_sp", ['$http', '$scope', '$routeParams', 'Credit_sp', function ($http, $scope, $routeParams, Credit_sp) {
             var _this = this;
             var currPrice = 0;
             $scope.id = $routeParams.id;
             $http({method: 'GET', url: '/pages/piven-sergey/product.json'})
                 .success(function (data) {
                     _this.products = data;
-                    currPrice = data[$scope.id].price;
 
-                    $scope.resultTwoMonths = 0;
-                    $scope.resultSixMonths = 0;
-                    $scope.resultTwelveMonths = 0;
-                    $scope.resultTwoMonths = Credit.calculateCreditForTwoMonths(currPrice);
-                    $scope.resultSixMonths = Credit.calculateCreditForSixMonths(currPrice);
-                    $scope.resultTwelveMonths = Credit.calculateCreditForTwelveMonths(currPrice);
+                    if ($scope.id) {
+                        currPrice = data[$scope.id].price;
+
+                        $scope.resultTwoMonths = 0;
+                        $scope.resultSixMonths = 0;
+                        $scope.resultTwelveMonths = 0;
+                        $scope.resultTwoMonths = Credit_sp.calculateCreditForTwoMonths(currPrice);
+                        $scope.resultSixMonths = Credit_sp.calculateCreditForSixMonths(currPrice);
+                        $scope.resultTwelveMonths = Credit_sp.calculateCreditForTwelveMonths(currPrice);
+                    }
                 });
 
             $('.creditButton').on('click', function () {

@@ -1,5 +1,5 @@
 angular.module('store')
-    .service('Credit', function () {
+    .service('Credit_sp', function () {
         this.calculateCreditForTwoMonths = function (currPrice) {
             return Math.floor((currPrice / 2) + (currPrice * 0.04));
         };
