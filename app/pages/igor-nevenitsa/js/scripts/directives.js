@@ -19,10 +19,19 @@ angular.module('store')
         return {
             restrict: 'E',
             templateUrl: '/pages/igor-nevenitsa/templates/description.html',
-           /* controller: 'TabController',
-            controllerAs: 'tab'*/
             controller: 'SnowboardsController',
             controllerAs: 'SnbCtrl'
+        }
+    })
+    .directive('creditsIn', function () {
+        return {
+            restrict: 'E',
+            templateUrl: '/pages/igor-nevenitsa/templates/credits.html',
+            scope: {
+                price: "="
+            },
+            controller: 'CreditsController',
+            controllerAs: 'CredCtrl'
         }
     })
     .directive('reviewsIn', function () {

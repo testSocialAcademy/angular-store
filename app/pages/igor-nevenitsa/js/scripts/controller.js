@@ -20,7 +20,22 @@
                         })
                         .catch(function(er){
                             _this.errors = er.data.error;
-                        })
+                        });
+                    $('.creditButton_IN').on('click', function () {
+                        console.log("click");
+                        $('.creditsPanel_IN').slideDown(500);
+                        $('.buyButton_IN').hide(500);
+                        $(this).hide(500);
+                        return false;
+                    });
+
+
+                    $('.creditsClose').on('click', function () {
+                        $('.creditsPanel_IN').slideUp(500);
+                        $('.buyButton_IN').show(500);
+                        $('.creditButton_IN').show(500);
+                    });
+
                 }])
 
             .controller("StoreController_IN", function () {
@@ -55,10 +70,24 @@
             this.addReview = function(product) {
                 product.messages.push(this.review);
                 this.review = {};
+
+            };
+
+             })
+
+            .controller('CreditsController', ['$scope', 'Credits',  function($scope, Credits) {
+
+                $scope.allCredits_in = [];
+
+
+                $scope.getAllCreds = function(price) {
+                    $scope.allCredits_in = Credits.allCredits_in(price);
+                    console.log( $scope.allCredits_in + "  - $scope.allCredits_in ");
                  };
 
-             });
 
+
+            }]);
 
     /*.controller("currentSnb", function () {
 
