@@ -1,0 +1,38 @@
+<div class="credit_ai">
+    <div class="credit-window_ai" ng-hide="getMonthlyPayment(laptopCtrl.selectedProduct.price2 || laptopCtrl.selectedProduct.price)">
+        <h2>{{laptopCtrl.selectedProduct.name | limitTo:30}}</h2>
+        <h3 ng-class="{old_prise_ai: laptopCtrl.selectedProduct.price2 }">{{"Цена: "+ laptopCtrl.selectedProduct.price + " грн"}}</h3>
+        <h3 ng-show="laptopCtrl.selectedProduct.price2">{{"Цена: "+ laptopCtrl.selectedProduct.price2 + " грн"}}</h3>
+        <form>
+            <table class="table table-bordered credit-window_table_ai" >
+                <thead>
+                <tr>
+                    <th>Срок кредитования</th>
+                    <th>Процентная ставка</th>
+                    <th>Ежемесячный платеж</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><label><input type="radio" name="laptopCredit" value="1"> 2 месяца</label></td>
+                    <td>4%</td>
+                    <td>{{monthlyPayment[0] + " грн"}}</td>
+                </tr>
+                <tr>
+                    <td><label><input type="radio" name="laptopCredit" value="2"> 6 месяцев</label></td>
+                    <td>5% + 100 грн</td>
+                    <td>{{monthlyPayment[1] + " грн"}}</td>
+                </tr>
+                <tr>
+                    <td><label><input type="radio" name="laptopCredit" value="3"> 12 месяцев</label></td>
+                    <td>10% + 150 грн</td>
+                    <td>{{monthlyPayment[2] + " грн"}}</td>
+                </tr>
+                </tbody>
+            </table>
+            <button type="submit" class="btn btn-success">Оформить кредит</button>
+        </form>
+        <button class="credit-window__close_ai" ng-click="laptopCtrl.showCreditWindow()">x</button>
+
+    </div>
+</div>

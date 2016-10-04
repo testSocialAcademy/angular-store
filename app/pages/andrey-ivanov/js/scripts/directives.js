@@ -50,6 +50,15 @@
                 restrict: "E",
                 templateUrl: "/pages/andrey-ivanov/templates/messages.html"
             };
+        })
+
+        .directive("laptopCredit",function() {
+            return {
+                restrict: "E",
+                templateUrl: "/pages/andrey-ivanov/templates/credit.html",
+                controller: "LaptopCreditController",
+                controllerAs: "creditCtrl"
+            }
         });
 
 })();
