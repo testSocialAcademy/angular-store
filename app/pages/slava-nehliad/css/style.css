@@ -1,0 +1,13 @@
+.price_nv {
+    text-decoration: line-through;
+}
+
+.firstPic_nv {
+    width: 300px;
+    height: auto;
+}
+
+.otherPic_nv {
+    width: 70px;
+    height: auto;
+}

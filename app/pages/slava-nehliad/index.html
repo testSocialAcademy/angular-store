@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en" ng-app="camStore_nv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Slava`s store</title>
+
+    <link rel="stylesheet" href="../../bower_components/normalize-css/normalize.css">
+    <link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/main.css">
+
+</head>
+<body>
+
+<div class="camera_nv" ng-controller="StoreController_nv as storeCtrl_nv">
+
+    <div class="container">
+
+        <div class="list-group-item row">
+
+            <h3>{{storeCtrl_nv.products.name}}</h3>
+
+
+            <section class="" ng-show="storeCtrl_nv.products.images.length">
+                <img ng-src="{{storeCtrl_nv.products.images[0]}}" class="firstPic_nv"/>
+                <ul class="list-inline">
+                    <li class="" ng-repeat="image in storeCtrl_nv.products.images">
+                        <img class="otherPic_nv" ng-src="{{image}}">
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <em class="pull-right" ng-show="storeCtrl_nv.products.soldOut">{{storeCtrl_nv.products.price2}}</em><br>
+                <em class="pull-right price_nv"
+                    ng-show="storeCtrl_nv.products.soldOut">{{storeCtrl_nv.products.price}}</em>
+                <em class="pull-right" ng-hide="storeCtrl_nv.products.soldOut">Нет в наличии!</em>
+            </section>
+
+
+            <section class="tab" ng-controller="TabController_nv as tabCtrl_nv">
+
+
+                <ul class="nav nav-pills">
+                    <li ng-class="{active: tabCtrl_nv.isTab(1)}">
+                        <a href="#" ng-click="tabCtrl_nv.setTab(1)">Описание</a>
+                    </li>
+                    <li ng-class="{active: tabCtrl_nv.isTab(2)}">
+                        <a href="#" ng-click="tabCtrl_nv.setTab(2)">Отзывы</a>
+                    </li>
+                </ul>
+
+
+                <div ng-show="tabCtrl_nv.isTab(1)">
+                    <blockquote>{{storeCtrl_nv.products.description}}</blockquote>
+                </div>
+
+                <div ng-show="tabCtrl_nv.isTab(2)" ng-controller="ReviewController_nv as reviewCtrl">
+
+                    <div ng-repeat="review in storeCtrl_nv.products.messages">
+                        <h4>{{review.author}}</h4>
+                        <p>{{review.message}}</p>
+                    </div>
+
+                    <div>
+                        <h4>{{reviewCtrl.review.author}}</h4>
+                        <p>{{reviewCtrl.review.message}}</p>
+                    </div>
+
+                    <form name="reviewForm" class="reviewForm" ng-submit="reviewForm.$valid && reviewCtrl.addReview(storeCtrl_nv.products)" novalidate>
+
+                        <input type="text" placeholder="Name" ng-model="reviewCtrl.review.author" class="form-control" required>
+                        <textarea cols="35" rows="5" placeholder="Write your message" ng-model="reviewCtrl.review.message" class="form-control" required></textarea><br>
+                        <input type="submit" value="Add message" class="btn">
+
+                    </form>
+
+                </div>
+
+            </section>
+
+        </div>
+
+
+    </div>
+</div>
+
+<script src="../../bower_components/jquery/dist/jquery.js"></script>
+<script src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="../../bower_components/angular/angular.js"></script>
+<script src="../../bower_components/angular-route/angular-route.js"></script>
+
+<script src="../../js/all.js"></script>
+</body>
+</html>
