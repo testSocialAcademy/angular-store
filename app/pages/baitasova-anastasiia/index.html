@@ -44,11 +44,25 @@
 
 <main role="main" class="container">
     <div class="row">
+        <div ng-controller="DefaultController as DefaultCtrl">
 
         <div>
-            <h1>Котики</h1>
+            <h1>Кроссовки Nike Revolution EU</h1>
         </div>
 
+        <div class="col-xs-12 col-md-1">
+            <img class="row__img2" ng-src="{{DefaultCtrl.product.images[1]}}" alt="">
+        </div>
+
+        <div class="col-xs-12 col-xs-12 col-md-8">
+            <img class="row__img1" ng-src="{{DefaultCtrl.product.images[0]}}" alt="">
+        </div>
+
+        <div class="col-xs-12 col-md-3">
+
+        </div>
+
+    </div>
     </div>
 </main>
 
@@ -56,6 +70,7 @@
 <script src="/bower_components/jquery/dist/jquery.js"></script>
 <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="/bower_components/angular/angular.min.js"></script>
+
 
 
 
