@@ -24,4 +24,20 @@
     /*  background-color: #222222;
       height: 300px;*/
     padding: 0;
+
+}
+
+
+.row__price {
+    text-decoration: line-through;
+    font-size: 45px;
+}
+
+.row__price2 {
+    font-size: 55px;
+    color: red;
+}
+
+.info {
+    text-align: center;
 }
