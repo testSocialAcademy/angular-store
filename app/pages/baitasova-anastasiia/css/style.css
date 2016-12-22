@@ -1,3 +1,27 @@
 .default {
     margin: 0;
 }
+
+.row__img1 {
+    width: 646px;
+    height: 486px;
+}
+
+.row__img2 {
+    width: 81px;
+    height: 61px;
+}
+
+.col-md-1, .col-xs-12 {
+    padding: 0;
+}
+
+.col-md-8, .col-xs-12 {
+    padding: 0;
+}
+
+.col-md-3, .col-xs-12 {
+    /*  background-color: #222222;
+      height: 300px;*/
+    padding: 0;
+}
