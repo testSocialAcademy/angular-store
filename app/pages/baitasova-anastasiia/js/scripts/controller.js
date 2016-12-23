@@ -1,3 +1,4 @@
+(function() {
 let myApp = angular.module('storess', []);
 
 myApp.controller("DefaultController", function () {
@@ -27,3 +28,17 @@ let sneakers = {
     ],
     soldOut: false
 };
+
+myApp.controller('PanelController', function() {
+    this.tab = 1;
+
+    this.isSelected = function(checkTab) {
+        return this.tab === checkTab;
+    };
+
+    this.selectTab = function(setTab) {
+        this.tab = setTab;
+    }
+});
+
+}) ();
