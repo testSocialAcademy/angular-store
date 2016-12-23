@@ -44,68 +44,65 @@
 
 <div ng-controller="PanelController as PanelCtrl">
 
-
-    <main role="main" class="container container__description" ng-show="PanelCtrl.tab === 1">
-
-        <div class="container__description" ng-show="PanelCtrl.tab === 2">
-            <h3>Отзывы</h3>
-        </div>
-
-    <div class="row">
-        <div class="col-xs-12 col-md-12">
-            <ul class="nav nav-tabs">
-                <li role="presentation" ng-class="{active: PanelCtrl.isSelected(1)}">
-                    <a href="#" ng-click="PanelCtrl.selectTab(1)">Описание</a>
-                </li>
-                <li role="presentation" ng-class="{active: PanelCtrl.isSelected(2)}">
-                    <a href="#" ng-click="PanelCtrl.selectTab(2)">Отзывы</a>
-                </li>
-            </ul>
-        </div>
-    </div>
+    <main role="main" class="container container__description">
 
 
 
-
-
-        <div ng-controller="DefaultController as DefaultCtrl">
-            <div class="row">
-
-        <div>
-            <h1>Кроссовки Nike Revolution EU</h1>
-        </div>
-
-        <div class="col-xs-12 col-md-1">
-            <img class="row__img2" ng-src="{{DefaultCtrl.product.images[1]}}" alt="">
-        </div>
-
-        <div class="col-xs-12 col-xs-12 col-md-8">
-            <img class="row__img1" ng-src="{{DefaultCtrl.product.images[0]}}" alt="">
-        </div>
-
-        <div class="col-xs-12 col-md-3">
-            <div class="info">
-            <h3 class="row__price">{{DefaultCtrl.product.price}}</h3>
-            <h2 class="row__price2">{{DefaultCtrl.product.price2}}</h2>
-            <button type="button" class="btn btn-secondary">В корзину</button>
+        <div class="row">
+            <div class="col-xs-12 col-md-12">
+                <ul class="nav nav-tabs">
+                    <li role="presentation" ng-class="{active: PanelCtrl.isSelected(1)}">
+                        <a href="#" ng-click="PanelCtrl.selectTab(1)">Описание</a>
+                    </li>
+                    <li role="presentation" ng-class="{active: PanelCtrl.isSelected(2)}">
+                        <a href="#" ng-click="PanelCtrl.selectTab(2)">Отзывы</a>
+                    </li>
+                </ul>
             </div>
         </div>
 
-    </div>
-            <h3>Описание</h3>
-            <p>{{DefaultCtrl.product.description}}</p>
-    </div>
-</main>
+        <div ng-show="PanelCtrl.isSelected(2)">
+            <h3>Отзывы</h3>
+        </div>
+
+
+        <div ng-show="PanelCtrl.tab === 1">
+
+            <div ng-controller="DefaultController as DefaultCtrl">
+                <div class="row">
+
+                    <div>
+                        <h1>Кроссовки Nike Revolution EU</h1>
+                    </div>
+
+                    <div class="col-xs-12 col-md-1">
+                        <img class="row__img2" ng-src="{{DefaultCtrl.product.images[1]}}" alt="">
+                    </div>
+
+                    <div class="col-xs-12 col-xs-12 col-md-8">
+                        <img class="row__img1" ng-src="{{DefaultCtrl.product.images[0]}}" alt="">
+                    </div>
+
+                    <div class="col-xs-12 col-md-3">
+                        <div class="info">
+                            <h3 class="row__price">{{DefaultCtrl.product.price}}</h3>
+                            <h2 class="row__price2">{{DefaultCtrl.product.price2}}</h2>
+                            <button type="button" class="btn btn-secondary">В корзину</button>
+                        </div>
+                    </div>
+
+                </div>
+                <h3>Описание</h3>
+                <p>{{DefaultCtrl.product.description}}</p>
+            </div>
+        </div>
+    </main>
 </div>
-
-
 
 
 <script src="/bower_components/jquery/dist/jquery.js"></script>
 <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="/bower_components/angular/angular.min.js"></script>
-
-
 
 
 <script src="/js/all.js"></script>
