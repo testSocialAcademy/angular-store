@@ -18,19 +18,25 @@ let sneakers = {
     ],
     messages: [
         {
-            author: 'Anna',
+            author: 'Анна',
             message: 'Великолепные кроссовки! Очень рада приобретению.'
         },
         {
-            author: 'Maria',
+            author: 'Мария',
             message: 'Качество отменное, цена хоть и велика, но за такие кроссы не жалко! Спасибо.'
         }
     ],
+    canPurchase: true,
     soldOut: false
 };
 
 myApp.controller('PanelController', function() {
     this.tab = 1;
+
+    /*this.show = $(".reviews__review1").each(function(){
+        $(".reviews").text(product.author + " \n" + product.message);
+    });*/
+
 
     this.isSelected = function(checkTab) {
         return this.tab === checkTab;
@@ -40,5 +46,16 @@ myApp.controller('PanelController', function() {
         this.tab = setTab;
     }
 });
+
+
+    myApp.controller('ReviewController', function() {
+        this.sneakers = sneakers.messages;
+        this.review = {author: "", message: ""};
+
+        this.addReview = function() {
+            this.sneakers.unshift(this.review);
+            this.review = {author: "", message: ""};
+        }
+    });
 
 }) ();
