@@ -1,0 +1,40 @@
+<div  ng-controller="SnowboardsController as SnbCtrl" class="creditsPanel_IN">
+    {{getAllCreds(price)}}
+
+    <img src="../../../images/snowboards/Delete.png" class="creditsClose" >
+
+    <div class="container">
+    <h2>{{SnbCtrl.selectedSnowboard.name}}</h2>
+    <p>Выберите тип желаемого кредита</p>
+    <table class="table table-condensed">
+        <thead>
+        <tr>
+            <th>Кредит</th>
+            <th>Процентная ставка</th>
+            <th>Ежемесячный платеж</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td> На 2 месяца</td>
+            <td>4%</td>
+            <td class="creditValue"> <input class='creditRadio' type="radio" name="MonthsCredit" value="type1">  {{allCredits_in[0] | currency:"$":0}}</td>
+        </tr>
+        <tr>
+            <td>На 6 месяцев</td>
+            <td>5% + $2</td>
+            <td class="creditValue"><input  class='creditRadio' type="radio" name="MonthsCredit" value="type2">  {{allCredits_in[1] | currency:"$":0}}  </td>
+        </tr>
+        <tr>
+            <td>На 12 месяцев</td>
+            <td>10% + $3</td>
+            <td class="creditValue"><input class='creditRadio' type="radio" name="MonthsCredit" value="type3"> {{allCredits_in[2] | currency:"$":0}}  </td>
+        </tr>
+        </tbody>
+    </table>
+        <button>Оформить кредит</button>
+
+
+
+</div>
+</div>

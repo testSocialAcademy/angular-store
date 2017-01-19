@@ -1,0 +1,27 @@
+<div ng-hide="laptopCtrl.selectedProduct.soldOut">
+    <h2>{{laptopCtrl.selectedProduct.name | limitTo:30}}</h2>
+    <laptop-images></laptop-images>
+    <section class="details_ai">
+        <h3 ng-class="{old_prise_ai: laptopCtrl.selectedProduct.price2 }">{{"Цена: "+ laptopCtrl.selectedProduct.price + " грн"}}</h3>
+        <h3 ng-show="laptopCtrl.selectedProduct.price2">{{"Цена: "+ laptopCtrl.selectedProduct.price2 + " грн"}}</h3>
+        <button type="button" class="btn btn-success  ">КУПИТЬ</button>
+        <button type="button" class="btn btn-primary " ng-click="laptopCtrl.showCreditWindow()">Кредит</button>
+
+    </section>
+    <section ng-controller="LaptopTabController as laptopTabCtrl">
+        <ul class="nav nav-tabs">
+            <li ng-class="{ active:laptopTabCtrl.isSet(1) }">
+                <a href="" ng-click="laptopTabCtrl.setTab(1)">Описание</a>
+            </li>
+            <li ng-class="{ active:laptopTabCtrl.isSet(2) }">
+                <a href="" ng-click="laptopTabCtrl.setTab(2)">Отзывы</a>
+            </li>
+        </ul>
+
+        <laptop-description ng-show="laptopTabCtrl.isSet(1)"></laptop-description>
+        <laptop-messages ng-show="laptopTabCtrl.isSet(2)"></laptop-messages>
+    </section>
+    <section>
+        <laptop-credit ng-show="laptopCtrl.modalCredit"></laptop-credit>
+    </section>
+</div>

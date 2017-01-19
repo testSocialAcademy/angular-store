@@ -1,0 +1,171 @@
+.small-image-in {
+    max-width: 15%;
+    height: 130px;
+    border: solid green 2px;
+    float: left;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.creditRadio {
+   margin-left: 10px;
+}
+
+.creditValue {
+    font-weight: bold;
+}
+
+.btn {
+    margin: 5px;
+}
+
+.small-image-in-wrap {
+    display: block;
+    vertical-align: middle;
+
+}
+
+.img-responsive {
+    margin: 0 auto;
+
+}
+
+#reviews-in {
+    border-bottom: 1px dotted #f2dede;
+    margin: 10px;
+}
+
+#description-txt-in {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.big-pic-in {
+    margin: 20px;
+    float: left;
+    display: block;
+    max-height: 600px;
+
+}
+
+.camber-txt, .flex-txt {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.camber-txt-text, .flex-txt-text {
+    font-size: 17px;
+}
+
+.price-one-in{
+    text-decoration: line-through;
+
+}
+
+.price-two-in {
+    color: red;
+    font-weight: bold;
+
+}
+
+.tabs-in {
+    padding-top: 20%;
+
+}
+
+#reviews-in img {
+    cursor: pointer;
+}
+
+.prices-wrap-in {
+    margin-left: 100px;
+
+}
+
+.sold-text-in {
+    margin-left: -12px;
+    color: red;
+    font-weight: bold;
+}
+
+.product-name-in {
+    border-top: 1px solid sandybrown;
+    padding: 20px;
+}
+
+.shop-header-in {
+    font-weight: bold;
+    font-size: 36px;
+    color: #660000;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#email-from-in.ng-invalid.ng-dirty  {
+    border-color: red;
+}
+
+#email-from-in.ng-valid.ng-dirty  {
+    border-color: green;
+}
+
+
+/*articles*/
+
+.articles-wrap-in {
+    display: block;
+    width: 1000px;
+    height: auto;
+    padding-bottom: 50px;
+}
+
+.prices-wrap-in.articlesIN {
+
+    display: block;
+    width: 370px;
+    height: 200px;
+    margin-left: 600px;
+    margin-top: -300px;
+    margin-bottom: 150px;
+    font-size: 17px;
+    font-weight: bold;
+    text-indent: 20px;
+}
+
+#descriptionFull {
+    display: block;
+    width: auto;
+    height: 200px;
+    margin: 10px;
+}
+
+
+.button-class {
+
+display: block;
+    width: 100px;
+    height: 50px;
+    margin-top: -863px;
+    margin-right: 460px;
+    float: right;
+
+}
+
+.creditsPanel_IN {
+    /*position: relative;
+    background-color: seashell;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: large;
+    border: 1px solid grey;
+    display: none;
+    height: 400px;
+    background-position: inherit;*/
+    background-color: seashell;
+    height: 300px;
+    margin-top: 800px;
+    border: 1px solid grey;
+    border-radius: 5px;
+    display: none;
+}

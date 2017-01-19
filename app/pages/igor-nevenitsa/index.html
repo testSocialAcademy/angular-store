@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en" ng-app="store">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Best store</title>
+
+    <link rel="stylesheet" href="/bower_components/normalize-css/normalize.css">
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+   <!-- <link rel="stylesheet" href="/css/main.css">-->
+    <link rel="stylesheet" href="css/style.css">
+
+
+
+</head>
+<body>
+
+<header class="container">
+    <div class="row">
+        <nav class="navbar navbar-inverse">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">Angular store</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                           aria-expanded="false">ТОВАРЫ <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/pages/igor-nenenitsa/">Сноуборды</a></li>
+                            <li><a href="#">Машины</a></li>
+                            <li><a href="#">Оружие</a></li>
+                            <li><a href="/pages/kolisnyk-maksym/">Котики</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<main role="main" class="container">
+
+ <h1 class="shop-header-in"  >Лучшие сноуборды</h1>
+
+    <div class="row" >
+        <div ng-controller="StoreController_IN as store">
+            <div ng-repeat="product in store.products" class="store-products-in">
+                <div class="jq-first">
+                <h1 class="product-name-in"> {{product.name}}</h1>
+                    <div class="jq-second">
+
+                <div class="prices-wrap-in">
+                    <h3 class="price-one-in"> {{product.price | currency}} </h3>
+                    <h3 class="price-two-in"> {{product.price2 | currency}} </h3>
+                    <button type="button" class="btn btn-primary btn-lg active" ng-hide="product.soldOut">Купить</button>
+                    <button type="button" class="btn btn-primary btn-lg" ng-show="product.soldOut" disabled="disabled">Купить</button>
+                    <p ng-show="product.soldOut" class="sold-text-in">Товар закончился</p>
+                </div>
+
+                              <!--              GALLERY                   -->
+
+                <div class='gallery' ng-controller="GalleryController  as gallery" ng-show="product.images.length">
+                    <div class="gallery-wrap-in col-md-12 ">
+                        <div class="big-pic-in col-md-6">
+                            <img ng-src="{{product.images[gallery.current]}}" />
+                         </div>
+                         <div class="small-image-in-wrap col-md-7 center-block">
+                            <ul>
+                                <li class="small-image-in  thumbnail  "  ng-repeat="image in product.images" ng-click="gallery.setCurrent(product.images.indexOf(image))">
+                                    <img ng-src="{{image}}"  class="small-image-itself-in "/>
+                                </li>
+                            </ul>
+                        </div>
+                     </div> <!--/gallery-wrap-in-->
+                </div> <!--/ng-controller="GalleryController-->
+
+                         <!-- ------        TABS       -------->
+
+                <section ng-controller="TabController as tab" class="tabs-in">
+                    <ul class="nav nav-pills  ">
+                        <li ng-class="{ active:tab.isSet(1) }">
+                            <a href="" ng-click="tab.setTab(1)" >Description</a>
+                        </li>
+
+                        <li ng-class="{ active:tab.isSet(2) }">
+                            <a href="" ng-click="tab.setTab(2)">Reviews</a>
+                        </li>
+                    </ul>
+
+                    <div ng-show="tab.isSet(1)">
+                        <h4 id="description-txt-in">Description</h4>
+                        <blockquote >{{product.description}}</blockquote>
+
+                        <strong class="camber-txt"> Camber: </strong> <span class="camber-txt-text">{{product.camber}}</span>
+                        <p><strong class="flex-txt"> Flex: </strong> <span class="flex-txt-text">{{product.flex}}</span></p>
+
+
+                    </div>
+
+                    <div ng-show="tab.isSet(2)">
+                         <!--               REVIEWS                    -->
+                            <div ng-repeat="review in product.messages" id="reviews-in">
+                                 <p> Author: {{review.author}} <img src="../../images/snowboards/Delete.png" onclick="deleteReview (this)"> </p>
+                                 <blockquote> {{review.message}} </blockquote>
+
+                            </div>
+                        <form name="reviewForm" ng-controller="ReviewController  as reviewCtrl" ng-submit="reviewForm.$valid && reviewCtrl.addReview(product)" novalidate>
+
+                            <blockquote>
+
+                               Review: {{reviewCtrl.review.message}}
+                                <cite class="clearfix">Author: {{reviewCtrl.review.author}}</cite>
+                            </blockquote>
+                            <!--               REVIEWS    INPUT                -->
+                            <h4>Submit a Review</h4>
+                            <fieldset class="form-group">
+                                <textarea ng-model="reviewCtrl.review.message" class="form-control" placeholder="Write a short review of the product..." title="Review"></textarea>
+                            </fieldset>
+                            <fieldset class="form-group">
+                                <input ng-model="reviewCtrl.review.author" id='email-from-in' type="email" class="form-control" placeholder="jimmyDean@example.org" title="Email" required/>
+                            </fieldset>
+                            <fieldset class="form-group">
+                                <input type="submit" class="btn btn-primary pull-right" value="Submit Review"  />
+                            </fieldset>
+
+                        </form>
+                    </div>
+                    </section>
+                   </div>
+                </div>
+            </div>
+    </div>
+</main>
+
+
+<script src="/bower_components/jquery/dist/jquery.js"></script>
+<script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="/bower_components/angular/angular.min.js"></script>
+
+<script src="/js/app.js"></script>
+<script src="/js/all.js"></script>
+<script src="js/scripts/script.js"></script>
+
+</body>
+</html>

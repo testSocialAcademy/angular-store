@@ -1,0 +1,9 @@
+<section class="col-xs-4 short-article" ng-repeat="mobile in mobilesCtrl.mobiles" ng-hide="mobile.soldOut">
+    <h3 class="short-article__title">{{mobile.title}}</h3>
+    <h4 class="short-article__price" >{{mobile.price + " гривен"}}</h4>
+    <img class="short-article__image" ng-src="{{mobile.images[0]}}">
+    <div class="short-description">
+        <div class="short-description_item" ng-repeat="item in mobile.description| limitTo: 3">{{item}}</div>
+    </div>
+    <a class="btn btn-info short-article__more-button" ng-href="#/mobiles/{{mobile.id}}">Подробнее</a>
+</section>

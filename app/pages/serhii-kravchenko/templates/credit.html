@@ -1,0 +1,48 @@
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Расчет кредита</h4>
+            </div>
+            <div class="modal-body">
+                <div ng-show="getCalculation(oneArticleSkr.product.price2 || oneArticleSkr.product.price)">
+                    <h2>{{oneArticleSkr.product.name}}</h2>
+                    <h3 ng-hide="oneArticleSkr.product.price2">{{"Общая стоимость " + oneArticleSkr.product.price}}</h3>
+                    <h3 ng-show="oneArticleSkr.product.price2">{{"Общая стоимость " + oneArticleSkr.product.price2}}</h3>
+                    <form>
+                        <table class="table table-bordered">
+                            <thead>
+                            <tr>
+                                <th>Срок кредита</th>
+                                <th>Процентная ставка</th>
+                                <th>Ежемесячный платеж</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td> На 2 месяца </td>
+                                <td>4%</td>
+                                <td>{{calculation[0]}}</td>
+                            </tr>
+                            <tr>
+                                <td> На 6 месяцев </label></td>
+                                <td>5% + 10 грн</td>
+                                <td>{{calculation[1]}}</td>
+                            </tr>
+                            <tr>
+                                <td> На 12 месяцев</td>
+                                <td>10% + 15 грн</td>
+                                <td>{{calculation[2]}}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+            </div>
+        </div>
+    </div>
+</div>

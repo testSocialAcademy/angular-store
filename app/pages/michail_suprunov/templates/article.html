@@ -1,0 +1,31 @@
+<main role="main" class="container">
+    <div class="row mobile">
+        <div class="col-xs-5 main-info">
+            <div class="mobile-header">
+                <h3 class="mobile-header__title">{{mobilesCtrl.selectedMobile.title}}</h3>
+                <h4 class="mobile-header__price">{{mobilesCtrl.selectedMobile.price + " гривен"}}</h4>
+            </div>
+            <mobile-images></mobile-images>
+            <button type="button" class="btn btn-success btn-block main-info__button">Купить</button>
+            <button type="button" class="btn btn-info btn-block main-info__button"
+                    ng-click="mobilesCtrl.displayCredit()">Оформить кредит
+            </button>
+        </div>
+        <div class="col-xs-7 mobile-info" ng-controller="PanelController_mu as panelCtrl" ng-hide="mobile.soldOut">
+            <ul class="nav nav-pills nav-justified">
+                <li ng-class="{active: panelCtrl.isSelected(1)}">
+                    <a class="nav-link" href ng-click="panelCtrl.selectTab(1)">Описание</a>
+                </li>
+                <li ng-class="{active: panelCtrl.isSelected(2)}">
+                    <a class="nav-link" href ng-click="panelCtrl.selectTab(2)">Отзывы</a>
+                </li>
+            </ul>
+            <div class="mobile-info-wrap">
+                <mobile-description ng-show="panelCtrl.isSelected(1)"></mobile-description>
+                <mobile-messages ng-show="panelCtrl.isSelected(2)"></mobile-messages>
+            </div>
+        </div>
+        <credit-mu price="mobilesCtrl.selectedMobile.price" show="mobilesCtrl.shownCredit"
+                   ng-show="mobilesCtrl.shownCredit"></credit-mu>
+    </div>
+</main>

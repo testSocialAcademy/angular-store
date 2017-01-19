@@ -1,0 +1,28 @@
+
+    <div ng-repeat="review in SnbCtrl.selectedSnowboard.messages" id="reviews-in">
+        <p> Автор: {{review.author}} <img src="../../../images/snowboards/Delete.png" onclick="deleteReview (this)"> </p>
+        <blockquote> {{review.message}} </blockquote>
+
+    </div>
+    <form name="reviewForm" ng-submit="reviewForm.$valid && RevCtrl.addReview(SnbCtrl.selectedSnowboard)" novalidate>
+
+        <blockquote>
+
+             {{RevCtrl.review.message}}
+            <cite class="clearfix"> {{RevCtrl.review.author}}</cite>
+        </blockquote>
+        <!--               REVIEWS    INPUT                -->
+        <h4>Отзывы</h4>
+        <fieldset class="form-group">
+            <textarea ng-model="RevCtrl.review.message" class="form-control" placeholder="Ваш отзыв" title="Review"></textarea>
+        </fieldset>
+        <fieldset class="form-group">
+            <input ng-model="RevCtrl.review.author" id='email-from-in' type="email" class="form-control" placeholder="jimmyDean@example.org" title="Email" required/>
+        </fieldset>
+        <fieldset class="form-group">
+            <input type="submit" class="btn btn-primary pull-right" value="Отправить отзыв"  />
+        </fieldset>
+
+    </form>
+
+

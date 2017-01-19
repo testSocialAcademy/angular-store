@@ -1,0 +1,10 @@
+<section ng-repeat="product in laptopCtrl.products" ng-hide="product.soldOut" class="product_ai">
+    <img class="product__image_ai" ng-src="{{product.images[0]}}">
+    <h2 class="product__name_ai">{{product.name | limitTo:30}}</h2>
+        <div>
+            <h3 class="product__price_ai" ng-class="{old_prise_ai: product.price2 }">{{product.price +" грн"}}</h3>
+            <h3 class="product__price_ai" ng-show="product.price2">{{product.price2 + " грн"}}</h3>
+        </div>
+        <a class="btn btn-info product__detail_ai" href="#/laptops/{{product.id}}">Подробнее</a>
+        <a class="btn btn-success product__buy_ai">Купить</a>
+</section>

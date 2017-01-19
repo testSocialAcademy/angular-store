@@ -1,0 +1,117 @@
+.product_ai {
+    float: left;
+    padding: 20px;
+    width: 33.3%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+
+}
+.product_ai:hover {
+    background-color: beige;
+
+}
+
+.product__image_ai {
+    height: 200px;
+    margin: auto;
+    display: block;
+}
+
+.product__name_ai {
+    text-align: center;
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.old_prise_ai {
+    text-decoration: line-through;
+    opacity: 0.5;
+    color: red;
+
+}
+
+.product__price_ai {
+    font-size: 16px;
+    display: inline-block;
+    border-radius: 2px;
+    background-color: lightgreen;
+    font-weight: bold;
+}
+
+.product__detail_ai {
+    float: right;
+    margin-top: 20px;
+}
+
+.product__buy_ai {
+    float: left;
+    margin-top: 20px;
+}
+
+/*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+.gallery_ai {
+    float: left;
+    padding: 10px;
+    width: 100%;
+}
+
+.gallery_main_ai {
+    width: 85%;
+    float: left;
+    position: relative;
+}
+
+.gallery_main__image_ai {
+    float: left;
+    width: 80%;
+}
+
+.gallery_preview_ai {
+    float: right;
+
+}
+
+.gallery_preview__image_ai {
+    width: 60px;
+    margin: 10px;
+    padding: 10px;
+    cursor: pointer;
+}
+.active_preview_image_ai {
+    border: 1px solid lightgreen;
+}
+.form_ai {
+    float: left;
+}
+/*////////////////////////////////////////////////*/
+.credit_ai{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    padding: 5% 0;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    background-color: rgba(0,0,0,0.4);
+}
+.credit-window_ai{
+    background-color: white;
+    height: auto;
+    position: relative;
+    width: 50%;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+}
+.credit-window__close_ai {
+    height: 30px;
+    width: 30px;
+    color: black;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 18px;
+    border-top-right-radius: 10px;
+}
+.credit-window_table_ai td{
+    text-align: center;
+}

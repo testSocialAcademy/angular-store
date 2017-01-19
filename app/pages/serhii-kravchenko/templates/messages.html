@@ -1,0 +1,33 @@
+<div>
+    <ul>
+        <h4>Отзывы</h4>
+        <li ng-repeat="message in oneArticleSkr.product.messages">
+            <blockquote>
+                <strong>Сообщение</strong>
+                {{message.message}}
+                <cite class="clearfix">Автор: {{message.author}}</cite>
+            </blockquote>
+        </li>
+    </ul>
+
+
+    <form name="reviewForm" rev-skr ng-submit="reviewForm.$valid && revSkr.addReview(oneArticleSkr.product)" novalidate>
+
+        <blockquote>
+            {{revSkr.message.message}}
+            <cite class="clearfix">Автор: {{revSkr.message.author}}</cite>
+        </blockquote>
+
+        <h4>Отправить отзыв</h4>
+        <fieldset class="form-group">
+            <textarea ng-model="revSkr.message.message" class="form-control" placeholder="Напишите короткий отзыв..." title="Review"></textarea>
+        </fieldset>
+        <fieldset class="form-group">
+            <input ng-model="revSkr.message.author" type="email" class="form-control"
+                   placeholder="jimmyDean@example.org" title="Email" required/>
+        </fieldset>
+        <fieldset class="form-group">
+            <input type="submit" class="btn btn-primary pull-right" value="Отправить отзыв" required/>
+        </fieldset>
+    </form>
+</div>

@@ -1,0 +1,26 @@
+
+
+
+<div class="" ng-repeat="product in SnbCtrl.boards">
+<div class="articles-wrap-in ">
+    <h1 class="product-name-in articlesIN"> {{product.name}}  </h1>
+    <img ng-src="{{product.images[0]}}" class="">
+    <div class="prices-wrap-in articlesIN">
+        <p class="prdct-desc-in ">{{product.description}}</p>
+
+
+
+
+            <h3 class="price-one-in"> {{product.price | currency:"$":0}} </h3>
+            <h3 class="price-two-in articlesIN"> {{product.price2 | currency:"$":0}} </h3>
+            <button type="button" class="btn btn-primary btn-lg active" ng-hide="product.soldOut">Купить</button>
+            <button type="button" class="btn btn-primary btn-lg" ng-show="product.soldOut" disabled="disabled">Купить</button>
+            <a ng-href="#/snowboards/{{product.id}}" >
+                <button class="btn btn-info ">О товаре</button>
+            </a>
+            <p ng-show="product.soldOut" class="sold-text-in">Товар закончился</p>
+
+        </div>
+        </div>
+        </div>
+

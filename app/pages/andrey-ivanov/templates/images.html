@@ -1,0 +1,12 @@
+<div class="gallery_ai" ng-show="laptopCtrl.selectedProduct.images.length">
+    <div class="gallery_main_ai">
+        <img class="gallery_main__image_ai" ng-src="{{laptopCtrl.selectedProduct.images[laptopImagesCtrl.current]}}">
+    </div>
+
+    <ul class="gallery_preview_ai">
+        <li ng-repeat="preview in laptopCtrl.selectedProduct.images">
+            <img ng-src="{{preview}}" class="gallery_preview__image_ai" ng-click="laptopImagesCtrl.setCurrent($index)" ng-class="{ active_preview_image_ai:laptopImagesCtrl.isCurrent($index) }">
+        </li>
+    </ul>
+
+</div>
