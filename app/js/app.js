@@ -55,6 +55,10 @@ angular.module('store')
                     templateUrl: '/pages/igor-nevenitsa/templates/full-articles.html'
                 }
             )
+            .when('/sneakers', {
+                    templateUrl: '/pages/baitasova-anastasiia/templates/full_articles.html'
+                }
+            )
             .otherwise({redirectTo: "/"})
     })
 ;

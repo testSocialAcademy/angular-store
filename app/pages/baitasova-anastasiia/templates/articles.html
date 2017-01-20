@@ -1,0 +1,22 @@
+<div class="container" ng-controller="ImageController as imageCtrl">
+    <div class="row">
+        <div class="col-xs-9 col-md-6" ng-repeat="product in imageCtrl.sneakers">
+            <div class="thumbnail">
+                <div>
+                <h2 class="productName">{{product.name}}</h2>
+                    <images-page class="imagesPage"></images-page>
+                    <div class="price">
+                        <div class="row">
+                    <div class="col-xs-12 col-md-6">
+                    <h4 class="articlesPrice1">{{product.price}}</h4>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                    <h5 class="articlesPrice2">{{product.price2}}</h5>
+                    </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

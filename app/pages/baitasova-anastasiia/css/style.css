@@ -57,3 +57,28 @@ body h3 {
 .container__review {
     margin-bottom: 23px;
 }
+
+.productName, .articlesPrice1, .articlesPrice2 {
+    text-align: center;
+}
+
+.articlesImg {
+    width: 100%;
+}
+
+.articlesPrice1 {
+    text-decoration: line-through;
+    font-size: 44px;
+    color: #444444;
+}
+
+.articlesPrice2 {
+    font-size: 50px;
+    color: red;
+}
+
+.imagesPage {
+    display: block;
+}
+
+
