@@ -62,7 +62,12 @@ body h3 {
     text-align: center;
 }
 
-.articlesImg {
+/*.productName {
+    text-decoration: none;
+    color: black;
+}*/
+
+.articles-img, .articles-img2 {
     width: 100%;
 }
 
@@ -81,4 +86,8 @@ body h3 {
     display: block;
 }
 
+.col-xs-9:link, .col-md-6:link {
+  text-decoration: none;
+    color: black;
+}
 

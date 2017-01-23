@@ -7,10 +7,31 @@ angular.module('store')
         }
     })
 
-    .directive('imagesPage', function () {
+    .directive('articlesImg', function () {
     return {
-        restrict: 'E',
+        restrict: 'A',
         templateUrl: '/pages/baitasova-anastasiia/templates/images.html',
     }
+    })
+
+    .directive('articlesImg2', function () {
+        return {
+            restrict: 'A',
+            templateUrl: '/pages/baitasova-anastasiia/templates/images.html',
+        }
+    })
+
+    .directive('messagesPage', function () {
+    return {
+        restrict: 'E',
+        templateUrl: '/pages/baitasova-anastasiia/templates/messages.html',
+    }
+    })
+
+    .directive('descriptionPage', function () {
+        return {
+            restrict: 'E',
+            templateUrl: '/pages/baitasova-anastasiia/templates/description.html',
+        }
     });
 

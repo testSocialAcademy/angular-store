@@ -5,11 +5,11 @@ angular.module('store')
     .config(function ($routeProvider) {
         $routeProvider
             .when('/', {
-                    templateUrl: '/pages/default/home.html'
+                    templateUrl: '/pages/default/index.html'
                 }
             )
             .when('/whiskey', {
-                    templateUrl: '/pages/feschenko-oleksandr/index.html'
+                    templateUrl: '/pages/feschenko-oleksandr/full_article.html'
                 }
             )
             .when('/whiskey/:id', {
@@ -17,7 +17,7 @@ angular.module('store')
                 }
             )
             .when('/consoles', {
-                    templateUrl: '/pages/piven-sergey/home.html'
+                    templateUrl: '/pages/piven-sergey/index.html'
                 }
             )
 
@@ -28,7 +28,7 @@ angular.module('store')
                 }
             )
             .when('/mobiles', {
-                    templateUrl: '/pages/michail_suprunov/index.html'
+                    templateUrl: '/pages/michail_suprunov/full_article.html'
                 }
             )
             .when('/mobiles/:id', {
@@ -36,27 +36,31 @@ angular.module('store')
                 }
             )
             .when('/guitars', {
-                templateUrl: '/pages/serhii-kravchenko/home.html'
+                templateUrl: '/pages/serhii-kravchenko/index.html'
             })
             .when('/guitars/:id', {
                 templateUrl: '/pages/serhii-kravchenko/templates/article.html'
             })
             .when('/laptops', {
-                templateUrl: '/pages/andrey-ivanov/index.html'
+                templateUrl: '/pages/andrey-ivanov/full_article.html'
             })
             .when('/laptops/:id', {
                     templateUrl: '/pages/andrey-ivanov/full_index.html'
                 }
             )
             .when('/snowboards', {
-                templateUrl: '/pages/igor-nevenitsa/home.html'
+                templateUrl: '/pages/igor-nevenitsa/index.html'
             })
             .when('/snowboards/:id', {
                     templateUrl: '/pages/igor-nevenitsa/templates/full-articles.html'
                 }
             )
             .when('/sneakers', {
-                    templateUrl: '/pages/baitasova-anastasiia/templates/full_articles.html'
+                    templateUrl: '/pages/baitasova-anastasiia/templates/index.html'
+                }
+            )
+            .when('/sneakers/:id', {
+                    templateUrl: '/pages/baitasova-anastasiia/templates/article.html'
                 }
             )
             .otherwise({redirectTo: "/"})
