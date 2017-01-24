@@ -4,6 +4,8 @@ angular.module('store')
         return {
             restrict: 'E',
             templateUrl: '/pages/baitasova-anastasiia/templates/articles.html',
+            controller: 'ArticlesController',
+            controllerAs: 'ArticlesCtrl'
         }
     })
 
