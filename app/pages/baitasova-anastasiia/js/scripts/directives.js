@@ -16,13 +16,6 @@ angular.module('store')
     }
     })
 
-    .directive('articlesImg2', function () {
-        return {
-            restrict: 'A',
-            templateUrl: '/pages/baitasova-anastasiia/templates/images.html',
-        }
-    })
-
     .directive('messagesPage', function () {
     return {
         restrict: 'E',
